@@ -60,3 +60,44 @@ html[data-theme=dark] footer{background:#081310}
   footer p{width:100%;margin:0;line-height:1.55}
   footer p:last-child{padding-top:14px;border-top:1px solid #ffffff1a}
 }
+
+/* Temas Ver+: porcelana e sálvia no claro, petróleo suave no escuro. */
+:root{--ink:#0d2119;--green:#438365;--deep:#2f7157;--cream:#f6f4ed;--mint:#e2eee7;--muted:#5f6f67}
+body{background:var(--cream);color:#182820}
+.section:not(.dark):not(.impact),.team,.gallery{background:var(--cream)}
+.steps article{background:#fffdfa;border-color:#153c2c17}
+.hero .eyebrow,.hero h1 em,.people small,.startup-grid small{color:#a9d8bd}
+.kicker{color:#347358}
+.impact{background:linear-gradient(145deg,#e8f1eb,#dcebe2)}
+.tags span{background:#ffffff80}
+footer{background:#e4ece7;color:#173126;border-color:#153c2c16}
+footer .brand{color:#173126}
+footer .brand span{color:#347358}
+footer p{color:#53675d}
+footer p strong{color:#244c3a}
+footer p:last-child{color:#5b6e64}
+
+body,.section,.team,.gallery,.impact,.dark,footer,.steps article,.tags span,.theme-toggle,.field-gallery,.download{
+  transition:background-color .45s ease,color .45s ease,border-color .45s ease,box-shadow .45s ease;
+}
+::view-transition-old(root),::view-transition-new(root){animation-duration:.48s;animation-timing-function:cubic-bezier(.22,1,.36,1)}
+
+html[data-theme=dark]{--green:#9acdaf;--deep:#78b395;--cream:#111a17;--mint:#192720;--muted:#aab9b1;--ink:#091512}
+html[data-theme=dark] body{background:#111a17;color:#edf3ef}
+html[data-theme=dark] .section:not(.dark):not(.impact),html[data-theme=dark] .team,html[data-theme=dark] .gallery{background:#111a17}
+html[data-theme=dark] .kicker{color:#9acdaf}
+html[data-theme=dark] footer{background:#091310;color:#e8f2ec;border-color:#d7e8df12}
+html[data-theme=dark] footer .brand{color:#f1f6f3}
+html[data-theme=dark] footer .brand span{color:#9acdaf}
+html[data-theme=dark] footer p{color:#9fb1a8}
+html[data-theme=dark] footer p strong{color:#e4eee8}
+html[data-theme=dark] footer p:last-child{color:#9fb1a8}
+
+@media(max-width:580px){
+  footer p:last-child{border-color:#173c2c20;color:#53675d}
+  html[data-theme=dark] footer p:last-child{border-color:#ffffff18;color:#9fb1a8}
+}
+@media(prefers-reduced-motion:reduce){
+  body,.section,.team,.gallery,.impact,.dark,footer,.steps article,.tags span,.theme-toggle,.field-gallery,.download{transition:none}
+  ::view-transition-old(root),::view-transition-new(root){animation:none}
+}

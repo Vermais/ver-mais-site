@@ -5,13 +5,26 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#061814">
 <meta name="description" content="Ver+ transforma o ambiente em descrições por áudio para ampliar a autonomia de pessoas com deficiência visual.">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
 <title>Ver+ | Tecnologia para enxergar além</title>
 <link rel="icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
-<script>document.documentElement.dataset.theme=localStorage.getItem('vermais-theme')||'light';</script>
-<link rel="stylesheet" href="style.css">
-<script src="script.js" defer>
+<script>
+history.scrollRestoration='manual';
+if(location.hash)history.replaceState(null,'',location.pathname+location.search);
+document.documentElement.style.scrollBehavior='auto';
+document.documentElement.dataset.theme=localStorage.getItem('vermais-theme')||'light';
+addEventListener('pageshow',function(){scrollTo(0,0)});
+addEventListener('load',function(){
+  scrollTo(0,0);
+  requestAnimationFrame(function(){document.documentElement.style.removeProperty('scroll-behavior')});
+},{once:true});
+</script>
+<link rel="stylesheet" href="style.css?v=20260912-3">
+<script src="script.js?v=20260912-3" defer>
 </script>
 </head>
 <body>

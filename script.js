@@ -12,9 +12,16 @@
   }
   themeToggle.addEventListener('click', function () {
     var next = root.dataset.theme === 'dark' ? 'light' : 'dark';
-    root.dataset.theme = next;
-    localStorage.setItem('vermais-theme', next);
-    updateThemeLabel();
+    function applyTheme() {
+      root.dataset.theme = next;
+      localStorage.setItem('vermais-theme', next);
+      updateThemeLabel();
+    }
+    if (!matchMedia('(prefers-reduced-motion: reduce)').matches && document.startViewTransition) {
+      document.startViewTransition(applyTheme);
+    } else {
+      applyTheme();
+    }
   });
   updateThemeLabel();
 
