@@ -233,7 +233,7 @@ html[data-theme=dark] .theme-toggle .moon{display:grid;opacity:1;transform:rotat
     clip-path:inset(0 0 100% 0 round 28px);transform:translateY(-12px) scale(.97);
     overflow:hidden;transition:opacity .3s ease,transform .55s cubic-bezier(.22,1,.36,1),clip-path .55s cubic-bezier(.22,1,.36,1),visibility 0s linear .55s;
   }
-  nav ul.open{clip-path:inset(0 round 28px);transform:none;transition-delay:0s}
+  nav ul.open{display:grid;clip-path:inset(0 round 28px);transform:none;transition-delay:0s}
   nav ul::before{
     content:"NAVEGUE PELO VER+";position:relative;z-index:2;inset:auto;grid-column:1/-1;
     display:block;padding:2px 4px 9px;background:none;color:#9acdaf;font:800 .66rem var(--display);
@@ -283,4 +283,8 @@ html[data-theme=dark] .theme-toggle .moon{display:grid;opacity:1;transform:rotat
   nav ul a::before{flex-basis:28px;width:28px;height:28px;border-radius:9px}
   nav ul li:not(:last-child) a::after{right:12px}
   nav ul .pill{min-height:52px}
+}
+@media(max-width:430px){
+  nav ul{grid-template-columns:1fr;max-height:calc(100vh - 88px);overflow-y:auto}
+  nav ul li:nth-child(5),nav ul li:nth-child(6){grid-column:auto}
 }
