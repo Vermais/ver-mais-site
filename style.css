@@ -217,3 +217,70 @@ html[data-theme=dark] .theme-toggle .moon{display:grid;opacity:1;transform:rotat
 @media(prefers-reduced-motion:reduce){
   #toggle,#toggle::before,#toggle i,nav ul,nav ul li,nav ul a{transition:none!important;animation:none!important}
 }
+
+/* Painel móvel premium: cartões, profundidade e identidade visual Ver+. */
+@media(max-width:900px){
+  nav::after{
+    content:"";position:fixed;z-index:-1;inset:76px 0 0;background:#020d0aa8;backdrop-filter:blur(5px);
+    opacity:0;pointer-events:none;transition:opacity .35s ease;
+  }
+  nav.menu-open::after{opacity:1}
+  nav ul{
+    inset:88px 14px auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;
+    width:auto;height:auto;padding:18px;
+    background:linear-gradient(145deg,#0a211bfa,#071612fd 72%);border:1px solid #b9dec927;border-radius:28px;
+    box-shadow:0 32px 75px #0009,inset 0 1px 0 #ffffff12;
+    clip-path:inset(0 0 100% 0 round 28px);transform:translateY(-12px) scale(.97);
+    overflow:hidden;transition:opacity .3s ease,transform .55s cubic-bezier(.22,1,.36,1),clip-path .55s cubic-bezier(.22,1,.36,1),visibility 0s linear .55s;
+  }
+  nav ul.open{clip-path:inset(0 round 28px);transform:none;transition-delay:0s}
+  nav ul::before{
+    content:"NAVEGUE PELO VER+";position:relative;z-index:2;inset:auto;grid-column:1/-1;
+    display:block;padding:2px 4px 9px;background:none;color:#9acdaf;font:800 .66rem var(--display);
+    letter-spacing:.16em;text-transform:uppercase;opacity:1;transform:none;
+  }
+  nav ul::after{
+    content:"";position:absolute;z-index:0;width:230px;height:230px;right:-95px;top:-115px;border-radius:50%;
+    background:radial-gradient(circle,#9acdaf24 0,transparent 68%);pointer-events:none;
+  }
+  nav ul li{z-index:1;min-width:0}
+  nav ul li:nth-child(5),nav ul li:nth-child(6){grid-column:1/-1}
+  nav ul a{
+    position:relative;min-height:66px;padding:13px 42px 13px 14px;border:1px solid #ffffff12;border-radius:17px;
+    background:linear-gradient(145deg,#ffffff0d,#ffffff05);color:#e8f4ed;
+    display:flex;align-items:center;gap:11px;font:700 .86rem var(--display);letter-spacing:-.01em;
+    box-shadow:inset 0 1px 0 #ffffff0b;
+    transition:transform .25s cubic-bezier(.22,1,.36,1),background .25s ease,border-color .25s ease,box-shadow .25s ease;
+  }
+  nav ul a::before{
+    flex:0 0 31px;width:31px;height:31px;border-radius:10px;display:grid;place-items:center;
+    background:#9acdaf12;border:1px solid #9acdaf24;color:#a9d8bd;font:800 .9rem var(--display);
+    box-shadow:inset 0 1px 0 #ffffff12;
+  }
+  nav ul li:nth-child(1) a::before{content:"✦"}
+  nav ul li:nth-child(2) a::before{content:"◉"}
+  nav ul li:nth-child(3) a::before{content:"◎"}
+  nav ul li:nth-child(4) a::before{content:"◌"}
+  nav ul li:nth-child(5) a::before{content:"▦"}
+  nav ul li:not(:last-child) a::after{content:"›";position:absolute;right:16px;color:#9acdaf80;font-size:1.4rem;font-weight:400}
+  nav ul a:hover,nav ul a:focus-visible{
+    background:linear-gradient(145deg,#9acdaf1d,#ffffff09);border-color:#9acdaf46;color:#fff;
+    transform:translateY(-2px);box-shadow:0 12px 26px #0004,inset 0 1px 0 #ffffff15;
+  }
+  nav ul .pill{
+    min-height:55px;justify-content:center;padding:13px 18px;margin-top:2px;border:0;
+    background:linear-gradient(135deg,#b7dec9,#85b99f);color:#071510;
+    box-shadow:0 13px 30px #0004,inset 0 1px 0 #ffffff80;
+  }
+  nav ul .pill::before{content:"↓";flex-basis:27px;width:27px;height:27px;border:0;background:#07151012;color:#071510}
+  nav ul .pill:hover,nav ul .pill:focus-visible{background:linear-gradient(135deg,#c7ead7,#94c9ae);color:#071510;transform:translateY(-3px);box-shadow:0 16px 34px #0005}
+}
+@media(max-width:580px){
+  nav::after{inset:68px 0 0}
+  nav ul{inset:78px 10px auto;padding:14px;gap:8px;border-radius:24px;clip-path:inset(0 0 100% 0 round 24px)}
+  nav ul.open{clip-path:inset(0 round 24px)}
+  nav ul a{min-height:61px;padding:11px 34px 11px 11px;font-size:.8rem;gap:8px;border-radius:15px}
+  nav ul a::before{flex-basis:28px;width:28px;height:28px;border-radius:9px}
+  nav ul li:not(:last-child) a::after{right:12px}
+  nav ul .pill{min-height:52px}
+}
