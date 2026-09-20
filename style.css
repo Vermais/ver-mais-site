@@ -161,3 +161,59 @@ html[data-theme=dark] .theme-toggle .moon{display:grid;opacity:1;transform:rotat
 @media(prefers-reduced-motion:reduce){
   .theme-toggle,.theme-toggle::before,.theme-toggle::after,.theme-toggle .sun,.theme-toggle .moon{transition:none;animation:none!important}
 }
+
+/* Menu móvel: sanduíche que vira X e painel com entrada em cascata. */
+@media(max-width:900px){
+  nav.menu-open{background:#061814f4;border-color:#9acdaf28;backdrop-filter:blur(18px);box-shadow:0 14px 45px #0005}
+  #toggle{
+    position:relative;display:block;overflow:hidden;width:45px;height:45px;min-width:45px;min-height:45px;padding:0;
+    border:1px solid #ffffff32;border-radius:14px;background:linear-gradient(145deg,#ffffff18,#ffffff08);
+    box-shadow:inset 0 1px 0 #ffffff18,0 8px 24px #0003;cursor:pointer;
+    transition:transform .42s cubic-bezier(.34,1.56,.64,1),background .3s ease,border-color .3s ease,box-shadow .3s ease;
+  }
+  #toggle::before{
+    content:"";position:absolute;inset:50%;border-radius:50%;background:#9acdaf26;
+    transform:translate(-50%,-50%) scale(0);transition:transform .55s cubic-bezier(.22,1,.36,1);
+  }
+  #toggle i{
+    position:absolute;z-index:1;left:11px;width:21px;height:2px;margin:0;border-radius:99px;background:#f4fbf7;
+    transform-origin:center;box-shadow:0 0 8px #ffffff28;
+    transition:top .38s cubic-bezier(.34,1.56,.64,1),transform .42s cubic-bezier(.34,1.56,.64,1),opacity .22s ease,width .3s ease,background .3s ease;
+  }
+  #toggle i:nth-child(1){top:14px}
+  #toggle i:nth-child(2){top:21px;width:15px}
+  #toggle i:nth-child(3){top:28px}
+  #toggle:hover{transform:translateY(-2px);border-color:#9acdaf65;background:#9acdaf18;box-shadow:inset 0 1px 0 #ffffff20,0 12px 28px #0004}
+  #toggle:active{transform:scale(.94)}
+  #toggle:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+  #toggle[aria-expanded=true]{transform:rotate(90deg);border-color:#9acdaf80;background:#9acdaf20;box-shadow:0 0 0 5px #9acdaf0e,0 12px 30px #0005}
+  #toggle[aria-expanded=true]::before{transform:translate(-50%,-50%) scale(1.8)}
+  #toggle[aria-expanded=true] i{top:21px;width:22px;background:#bde0cc}
+  #toggle[aria-expanded=true] i:nth-child(1){transform:rotate(45deg)}
+  #toggle[aria-expanded=true] i:nth-child(2){opacity:0;transform:rotate(180deg) scaleX(0)}
+  #toggle[aria-expanded=true] i:nth-child(3){transform:rotate(-45deg)}
+  nav ul{
+    display:flex;visibility:hidden;pointer-events:none;opacity:0;
+    transform:translateY(-18px) scale(.985);transform-origin:top center;
+    background:linear-gradient(160deg,#071d18fa,#0d3029f7);border-top:1px solid #ffffff14;border-bottom:1px solid #9acdaf22;
+    border-radius:0 0 26px 26px;box-shadow:0 28px 55px #0006;backdrop-filter:blur(18px);
+    transition:opacity .28s ease,transform .5s cubic-bezier(.22,1,.36,1),visibility 0s linear .5s;
+  }
+  nav ul::before{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:radial-gradient(circle at 86% 8%,#9acdaf16,transparent 36%)}
+  nav ul.open{visibility:visible;pointer-events:auto;opacity:1;transform:none;transition-delay:0s}
+  nav ul li{position:relative;opacity:0;transform:translateX(22px);transition:opacity .3s ease,transform .48s cubic-bezier(.22,1,.36,1)}
+  nav ul.open li{opacity:1;transform:none}
+  nav ul.open li:nth-child(1){transition-delay:.07s}
+  nav ul.open li:nth-child(2){transition-delay:.11s}
+  nav ul.open li:nth-child(3){transition-delay:.15s}
+  nav ul.open li:nth-child(4){transition-delay:.19s}
+  nav ul.open li:nth-child(5){transition-delay:.23s}
+  nav ul.open li:nth-child(6){transition-delay:.27s}
+  nav ul a{display:block;padding:11px 14px;border-radius:12px;transition:background .2s ease,color .2s ease,transform .2s ease}
+  nav ul a:hover,nav ul a:focus-visible{background:#ffffff0d;color:#fff;transform:translateX(4px);outline:none}
+  nav ul .pill{color:var(--ink);text-align:center;margin-top:5px}
+  nav ul .pill:hover,nav ul .pill:focus-visible{background:#b6dec8;color:#081713;transform:translateY(-2px)}
+}
+@media(prefers-reduced-motion:reduce){
+  #toggle,#toggle::before,#toggle i,nav ul,nav ul li,nav ul a{transition:none!important;animation:none!important}
+}

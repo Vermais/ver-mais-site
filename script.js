@@ -36,6 +36,7 @@
 
   function closeMenu(returnFocus) {
     menu.classList.remove('open');
+    nav.classList.remove('menu-open');
     toggle.setAttribute('aria-expanded', 'false');
     toggle.setAttribute('aria-label', 'Abrir menu');
     if (returnFocus) toggle.focus();
@@ -43,6 +44,7 @@
   toggle.addEventListener('click', function () {
     var open = !menu.classList.contains('open');
     menu.classList.toggle('open', open);
+    nav.classList.toggle('menu-open', open);
     toggle.setAttribute('aria-expanded', String(open));
     toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
   });
