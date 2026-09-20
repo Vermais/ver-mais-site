@@ -2,7 +2,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="420 127 602 602" width="602" height="602">
 <defs>
   <clipPath id="isologo-shape">
-    <rect x="424" y="132" width="594" height="585" rx="96"/>
+    <rect x="440" y="150" width="560" height="550" rx="70"/>
   </clipPath>
 </defs>
 <style>svg &gt; path:first-of-type{clip-path:url(#isologo-shape)}</style>
