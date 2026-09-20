@@ -60,30 +60,45 @@
 
   var downloadButton = document.getElementById('downloadBtn');
   var downloadLabel = document.getElementById('downloadLabel');
-  var version = document.getElementById('version');
-  var meta = document.getElementById('meta');
   downloadButton.addEventListener('click', function (event) {
-    if (downloadButton.getAttribute('aria-disabled') === 'true') event.preventDefault();
-  });
-  fetch('https://api.github.com/repos/Vermais/ver-mais-site/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
-    .then(function (response) { if (!response.ok) throw Error('A primeira versão será publicada em breve'); return response.json(); })
-    .then(function (release) {
-      var apk = release.assets.find(function (asset) { return /\.apk$/i.test(asset.name); });
-      if (!apk) throw Error('A versão mais recente ainda não possui APK');
-      downloadButton.href = apk.browser_download_url;
-      downloadButton.classList.remove('loading');
-      downloadButton.removeAttribute('aria-disabled');
-      downloadLabel.textContent = 'Baixar versão mais recente';
-      version.textContent = release.name || release.tag_name;
-      meta.textContent = '● ' + release.tag_name + ' • ' + (apk.size / 1048576).toFixed(0) + ' MB';
-    }).catch(function (error) {
-      downloadButton.href = 'https://github.com/Vermais/ver-mais-site/releases';
-      downloadButton.classList.remove('loading');
-      downloadButton.removeAttribute('aria-disabled');
-      downloadLabel.textContent = 'Acompanhar lançamentos';
-      version.textContent = 'Ver versões no GitHub';
-      meta.textContent = '● ' + error.message;
+    event.preventDefault();
+    if (downloadButton.classList.contains('loading')) return;
+
+    var base = downloadButton.dataset.downloadBase;
+    var partCount = Number(downloadButton.dataset.downloadParts);
+    var parts = Array.from({ length: partCount }, function (_, index) {
+      return base + String(index + 1).padStart(2, '0');
     });
+
+    downloadButton.classList.add('loading');
+    downloadButton.setAttribute('aria-busy', 'true');
+    downloadLabel.textContent = 'Preparando download…';
+
+    Promise.all(parts.map(function (part) {
+      return fetch(part).then(function (response) {
+        if (!response.ok) throw Error('Parte do aplicativo indisponível');
+        return response.arrayBuffer();
+      });
+    })).then(function (buffers) {
+      var blob = new Blob(buffers, { type: 'application/vnd.android.package-archive' });
+      var objectUrl = URL.createObjectURL(blob);
+      var link = document.createElement('a');
+      link.href = objectUrl;
+      link.download = 'Ver + v0.5.apk';
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      setTimeout(function () { URL.revokeObjectURL(objectUrl); }, 60000);
+      downloadLabel.textContent = 'Download iniciado';
+    }).catch(function () {
+      downloadLabel.textContent = 'Ver lançamentos no GitHub';
+      window.location.href = downloadButton.href;
+    }).finally(function () {
+      downloadButton.classList.remove('loading');
+      downloadButton.removeAttribute('aria-busy');
+      setTimeout(function () { downloadLabel.textContent = 'Baixar versão 0.5'; }, 3500);
+    });
+  });
 
   var records = [
     { src: 'assets/g1.jpg', date: '12 de agosto de 2026', dateISO: '2026-08-12', title: 'Registro 16', type: 'Desenvolvimento do projeto', description: 'Desenvolvimento do projeto Ver+, com revisão do aplicativo, testes e melhorias.' },
