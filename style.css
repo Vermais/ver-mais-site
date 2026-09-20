@@ -105,3 +105,59 @@ html[data-theme=dark] footer p:last-child{color:#9fb1a8}
 /* Identidade visual oficial em SVG, sem o contorno branco do PNG anterior. */
 .brand img{width:38px;height:38px;object-fit:contain;border-radius:10px;background:#08234e;box-shadow:0 10px 25px #0003}
 .logo img{width:82%;border-radius:12px}
+
+/* Seletor dia/noite com movimento suave e retorno visual claro. */
+.theme-toggle{
+  position:relative;isolation:isolate;overflow:hidden;
+  width:64px;height:36px;min-width:64px;min-height:36px;padding:0;
+  border:1px solid #ffe9a852;border-radius:999px;
+  background:linear-gradient(135deg,#ffcf70,#f7a94d);
+  color:#17241f;box-shadow:inset 0 1px 0 #ffffff70,0 8px 24px #0004;
+  display:block;cursor:pointer;
+  transition:background .45s ease,border-color .45s ease,box-shadow .3s ease,transform .25s ease;
+}
+.theme-toggle::before{
+  content:"✦  ·  ✧";position:absolute;inset:0;display:flex;align-items:center;justify-content:flex-start;
+  padding-left:8px;color:#dff7ec;font-size:8px;letter-spacing:2px;opacity:0;transform:translateX(-7px);
+  transition:opacity .35s ease,transform .45s cubic-bezier(.22,1,.36,1);
+}
+.theme-toggle::after{
+  content:"";position:absolute;z-index:1;top:3px;left:3px;width:28px;height:28px;border-radius:50%;
+  background:linear-gradient(145deg,#fffdf5,#fff1c5);box-shadow:0 3px 10px #6d3d1938,inset 0 0 0 1px #fff;
+  transition:transform .52s cubic-bezier(.34,1.56,.64,1),background .4s ease,box-shadow .4s ease;
+}
+.theme-toggle .sun,.theme-toggle .moon{
+  position:absolute;z-index:2;top:3px;width:28px;height:28px;display:grid;place-items:center;
+  line-height:1;font-size:15px;pointer-events:none;
+  transition:opacity .3s ease,transform .52s cubic-bezier(.34,1.56,.64,1),color .35s ease;
+}
+.theme-toggle .sun{left:3px;color:#dc8a16;opacity:1;transform:rotate(0) scale(1)}
+.theme-toggle .moon{right:3px;color:#f1f8f4;opacity:.48;transform:rotate(-28deg) scale(.72)}
+.theme-toggle:hover{transform:translateY(-2px);box-shadow:inset 0 1px 0 #ffffff80,0 12px 28px #0005}
+.theme-toggle:active{transform:translateY(0) scale(.96)}
+.theme-toggle:focus-visible{outline:3px solid var(--green);outline-offset:3px}
+html[data-theme=dark] .theme-toggle{
+  border-color:#b9d7c63d;background:linear-gradient(135deg,#142c3b,#18382f);
+  box-shadow:inset 0 1px 0 #ffffff20,0 8px 24px #0006;
+}
+html[data-theme=dark] .theme-toggle::before{opacity:.8;transform:translateX(0)}
+html[data-theme=dark] .theme-toggle::after{
+  transform:translateX(28px);background:linear-gradient(145deg,#eff9f4,#bed9cb);
+  box-shadow:0 3px 12px #0006,inset -4px -3px 0 #9fbeaf55;
+}
+html[data-theme=dark] .theme-toggle .sun{display:grid;opacity:.38;transform:rotate(90deg) scale(.68);color:#ffd77a}
+html[data-theme=dark] .theme-toggle .moon{display:grid;opacity:1;transform:rotate(0) scale(1);color:#31594a}
+.theme-toggle.is-switching{animation:theme-pop .58s cubic-bezier(.22,1,.36,1)}
+.theme-toggle.is-switching .sun{animation:sun-spark .58s ease}
+.theme-toggle.is-switching .moon{animation:moon-float .58s ease}
+@keyframes theme-pop{0%,100%{filter:none}45%{filter:drop-shadow(0 0 9px #9acdafaa)}}
+@keyframes sun-spark{50%{transform:rotate(150deg) scale(1.22)}}
+@keyframes moon-float{50%{transform:rotate(-18deg) translateY(-2px) scale(1.12)}}
+@media(max-width:580px){
+  .theme-toggle{width:58px;height:34px;min-width:58px;min-height:34px;margin-right:10px}
+  .theme-toggle::after,.theme-toggle .sun,.theme-toggle .moon{top:3px;width:26px;height:26px}
+  html[data-theme=dark] .theme-toggle::after{transform:translateX(26px)}
+}
+@media(prefers-reduced-motion:reduce){
+  .theme-toggle,.theme-toggle::before,.theme-toggle::after,.theme-toggle .sun,.theme-toggle .moon{transition:none;animation:none!important}
+}

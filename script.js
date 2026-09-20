@@ -7,17 +7,26 @@
 
   function updateThemeLabel() {
     var dark = root.dataset.theme === 'dark';
-    themeToggle.setAttribute('aria-label', dark ? 'Ativar modo claro' : 'Ativar modo escuro');
+    var label = dark ? 'Ativar modo claro' : 'Ativar modo escuro';
+    themeToggle.setAttribute('aria-label', label);
+    themeToggle.setAttribute('title', label);
     themeToggle.setAttribute('aria-pressed', String(dark));
   }
   themeToggle.addEventListener('click', function () {
     var next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    var reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reducedMotion) {
+      themeToggle.classList.remove('is-switching');
+      void themeToggle.offsetWidth;
+      themeToggle.classList.add('is-switching');
+      setTimeout(function () { themeToggle.classList.remove('is-switching'); }, 620);
+    }
     function applyTheme() {
       root.dataset.theme = next;
       localStorage.setItem('vermais-theme', next);
       updateThemeLabel();
     }
-    if (!matchMedia('(prefers-reduced-motion: reduce)').matches && document.startViewTransition) {
+    if (!reducedMotion && document.startViewTransition) {
       document.startViewTransition(applyTheme);
     } else {
       applyTheme();
