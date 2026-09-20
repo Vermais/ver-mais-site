@@ -288,3 +288,53 @@ html[data-theme=dark] .theme-toggle .moon{display:grid;opacity:1;transform:rotat
   nav ul{grid-template-columns:1fr;max-height:calc(100vh - 88px);overflow-y:auto}
   nav ul li:nth-child(5),nav ul li:nth-child(6){grid-column:auto}
 }
+
+/* Acabamento geral, microinterações e movimento editorial. */
+.scroll-progress{position:fixed;z-index:300;inset:0 0 auto;height:3px;transform:scaleX(0);transform-origin:left center;background:linear-gradient(90deg,#80b79a,#bce3ce 52%,#39e48c);box-shadow:0 0 16px #9acdaf99;pointer-events:none;will-change:transform}
+h1,h2{text-wrap:balance}p{text-wrap:pretty}
+:where(a,button):focus-visible{outline:3px solid var(--green);outline-offset:4px}
+@media(min-width:901px){
+  #menu a:not(.pill){position:relative;transition:color .25s ease,transform .25s ease}
+  #menu a:not(.pill)::after{content:"";position:absolute;left:0;right:100%;bottom:-9px;height:2px;border-radius:2px;background:var(--green);transition:right .35s cubic-bezier(.22,1,.36,1)}
+  #menu a.active:not(.pill),#menu a:not(.pill):hover{color:#fff;transform:translateY(-1px)}
+  #menu a.active:not(.pill)::after,#menu a:not(.pill):hover::after{right:0}
+}
+@media(max-width:900px){#menu a.active:not(.pill){background:linear-gradient(145deg,#9acdaf20,#ffffff0a);border-color:#9acdaf55;box-shadow:inset 3px 0 0 #9acdaf}}
+.hero::before{content:"";position:absolute;width:560px;height:560px;right:-180px;top:-210px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,#74b79524 0,#39e48c0b 42%,transparent 70%);filter:blur(5px)}
+.gridbg{animation:grid-drift 18s linear infinite}
+.orbit::before{content:"";position:absolute;width:11px;height:11px;left:48px;top:52px;border-radius:50%;background:var(--green);box-shadow:0 0 0 7px #39e48c13,0 0 24px #39e48caa}
+.logo{animation:hero-float 6s ease-in-out infinite;will-change:transform}
+.float.top{animation:card-float 5.4s ease-in-out infinite}.float.bottom{animation:card-float 5.4s ease-in-out -2.7s infinite}
+.hero .reveal.visible .eyebrow{animation:hero-rise .65s .05s both}.hero .reveal.visible h1{animation:hero-rise .8s .12s both}.hero .reveal.visible .lead{animation:hero-rise .8s .2s both}.hero .reveal.visible .actions{animation:hero-rise .8s .28s both}.hero .reveal.visible .trust{animation:hero-rise .8s .36s both}
+.btn,.downloadbtn,.instagram-btn{position:relative;overflow:hidden;isolation:isolate;transition:transform .28s cubic-bezier(.22,1,.36,1),box-shadow .28s ease,background .28s ease}
+.btn::after,.downloadbtn::after,.instagram-btn::after{content:"";position:absolute;z-index:-1;inset:-60% auto -60% -45%;width:32%;transform:rotate(18deg) translateX(-220%);background:linear-gradient(90deg,transparent,#ffffff70,transparent);transition:transform .65s cubic-bezier(.22,1,.36,1)}
+.btn:hover,.downloadbtn:hover,.instagram-btn:hover{transform:translateY(-3px);box-shadow:0 14px 32px #0003}.btn:hover::after,.downloadbtn:hover::after,.instagram-btn:hover::after{transform:rotate(18deg) translateX(560%)}
+.steps article,.startup-grid article{overflow:hidden;transition:transform .4s cubic-bezier(.22,1,.36,1),box-shadow .4s ease,border-color .4s ease;box-shadow:0 14px 34px #1434270a}
+.steps article::before,.startup-grid article::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:0;background:radial-gradient(circle at 85% 8%,#9acdaf26,transparent 42%);transition:opacity .35s ease}
+.steps article:hover,.startup-grid article:hover{transform:translateY(-9px);border-color:#78b39555;box-shadow:0 24px 55px #1434271c}.steps article:hover::before,.startup-grid article:hover::before{opacity:1}
+.steps article>i{transition:transform .45s cubic-bezier(.34,1.56,.64,1),box-shadow .35s ease}.steps article:hover>i{transform:rotate(-8deg) scale(1.1);box-shadow:0 10px 24px #6eae8e33}
+.stats p{transition:background .3s ease,transform .35s cubic-bezier(.22,1,.36,1)}.stats p:hover{background:#ffffff18;transform:translateY(-4px)}
+.showcase,.device,.field-gallery,.download{box-shadow:0 25px 70px #0618141b;transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s ease}
+.showcase:hover,.device:hover,.field-gallery:hover{transform:translateY(-5px);box-shadow:0 34px 85px #06181429}
+.showcase>img,.device img{transition:transform .8s cubic-bezier(.22,1,.36,1),filter .5s ease}.showcase:hover>img,.device:hover img{transform:scale(1.025);filter:saturate(1.06)}
+.people article{border:1px solid transparent;transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s ease,border-color .35s ease}.people article:hover{transform:translateY(-8px);border-color:#9acdaf55;box-shadow:0 25px 55px #06181430}
+.people img{transition:transform .75s cubic-bezier(.22,1,.36,1),filter .45s ease}.people article:hover img{transform:scale(1.055);filter:saturate(1.06) contrast(1.03)}
+.people article>div{transition:transform .45s cubic-bezier(.22,1,.36,1)}.people article:hover>div{transform:translateY(-5px)}
+.photos img{transition:transform .45s cubic-bezier(.22,1,.36,1),filter .4s ease,box-shadow .4s ease}.photos img:hover{transform:translateY(-6px) scale(1.012);filter:saturate(1.08);box-shadow:0 20px 45px #06181428}
+.motion-item.reveal{transition-delay:var(--delay,0ms);transition-duration:.75s;transition-timing-function:cubic-bezier(.22,1,.36,1)}
+.download{position:relative;overflow:hidden;background-size:180% 180%;animation:download-glow 10s ease infinite}.download::after{content:"";position:absolute;width:260px;height:260px;right:-110px;top:-120px;border-radius:50%;background:#ffffff20;filter:blur(4px);pointer-events:none}
+.contact{position:relative;overflow:hidden}.contact::before{content:"";position:absolute;width:420px;height:420px;right:-170px;bottom:-250px;border-radius:50%;background:#9acdaf14;filter:blur(2px);pointer-events:none}
+@keyframes hero-rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
+@keyframes hero-float{0%,100%{transform:rotate(-5deg) translateY(0)}50%{transform:rotate(-2deg) translateY(-13px)}}
+@keyframes card-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+@keyframes grid-drift{to{background-position:62px 62px}}
+@keyframes download-glow{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+@media(max-width:580px){
+  .motion-item.reveal:not(.visible){opacity:0;transform:translateY(16px)}.motion-item.reveal.visible{opacity:1;transform:none}
+  .showcase:hover,.device:hover,.field-gallery:hover,.people article:hover,.photos img:hover{transform:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .gridbg,.logo,.float,.download,.hero .reveal.visible>*{animation:none!important}
+  .motion-item.reveal{transition:none!important;opacity:1!important;transform:none!important}
+  .btn::after,.downloadbtn::after,.instagram-btn::after{display:none}
+}
