@@ -101,3 +101,7 @@ html[data-theme=dark] footer p:last-child{color:#9fb1a8}
   body,.section,.team,.gallery,.impact,.dark,footer,.steps article,.tags span,.theme-toggle,.field-gallery,.download{transition:none}
   ::view-transition-old(root),::view-transition-new(root){animation:none}
 }
+
+/* Identidade visual oficial em SVG, sem o contorno branco do PNG anterior. */
+.brand img{width:52px;height:30px;object-fit:contain;border-radius:6px;box-shadow:0 10px 25px #0003}
+.logo img{width:82%;border-radius:12px}
