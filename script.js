@@ -73,10 +73,16 @@
   updateScrollChrome();
 
   var reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  document.querySelectorAll('.steps article,.stats p,.features li,.people article,.photos img,.startup-grid article').forEach(function (element, index) {
-    element.classList.add('reveal', 'motion-item');
-    element.style.setProperty('--delay', ((index % 6) * 65) + 'ms');
-  });
+  var lightweightMode = matchMedia('(max-width: 900px), (pointer: coarse)').matches ||
+    (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4) ||
+    (navigator.deviceMemory && navigator.deviceMemory <= 4);
+  if (lightweightMode) root.classList.add('performance-mode');
+  if (!lightweightMode) {
+    document.querySelectorAll('.steps article,.stats p,.features li,.people article,.photos img,.startup-grid article').forEach(function (element, index) {
+      element.classList.add('reveal', 'motion-item');
+      element.style.setProperty('--delay', ((index % 6) * 65) + 'ms');
+    });
+  }
   var observer = !reduceMotion && 'IntersectionObserver' in window ? new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
       if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
@@ -135,10 +141,10 @@
     });
 
   var records = [
-    { src: 'assets/g1.jpg', date: '12 de agosto de 2026', dateISO: '2026-08-12', title: 'Registro 16', type: 'Desenvolvimento do projeto', description: 'Desenvolvimento do projeto Ver+, com revisão do aplicativo, testes e melhorias.' },
-    { src: 'assets/g2.jpg', date: '12 de agosto de 2026', dateISO: '2026-08-12', title: 'Registro 8', type: 'Desenvolvimento do projeto', description: 'Desenvolvimento do projeto Ver+, organização dos materiais e evolução das funcionalidades.' },
-    { src: 'assets/g3.jpg', date: '12 de agosto de 2026', dateISO: '2026-08-12', title: 'Registro 6', type: 'Desenvolvimento do projeto', description: 'Desenvolvimento do projeto Ver+, com programação, ajustes e validação da experiência.' },
-    { src: 'assets/g4.jpg', date: '6 de agosto de 2026', dateISO: '2026-08-06', title: 'Registro 2', type: 'Etapas finais', description: 'Alinhamento das etapas finais, revisão do modelo e organização da documentação do projeto.' }
+    { src: 'assets/g1.webp', date: '12 de agosto de 2026', dateISO: '2026-08-12', title: 'Registro 16', type: 'Desenvolvimento do projeto', description: 'Desenvolvimento do projeto Ver+, com revisão do aplicativo, testes e melhorias.' },
+    { src: 'assets/g2.webp', date: '12 de agosto de 2026', dateISO: '2026-08-12', title: 'Registro 8', type: 'Desenvolvimento do projeto', description: 'Desenvolvimento do projeto Ver+, organização dos materiais e evolução das funcionalidades.' },
+    { src: 'assets/g3.webp', date: '12 de agosto de 2026', dateISO: '2026-08-12', title: 'Registro 6', type: 'Desenvolvimento do projeto', description: 'Desenvolvimento do projeto Ver+, com programação, ajustes e validação da experiência.' },
+    { src: 'assets/g4.webp', date: '6 de agosto de 2026', dateISO: '2026-08-06', title: 'Registro 2', type: 'Etapas finais', description: 'Alinhamento das etapas finais, revisão do modelo e organização da documentação do projeto.' }
   ];
   var recordIndex = 0;
   var fieldGallery = document.querySelector('.field-gallery');
@@ -185,6 +191,7 @@
     image.src = record.src;
     image.alt = '';
     image.loading = 'lazy';
+    image.decoding = 'async';
     button.appendChild(image);
     button.addEventListener('click', function () { showRecord(index, { announce: true }); });
     fieldThumbs.appendChild(button);

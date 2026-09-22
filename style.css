@@ -338,3 +338,28 @@ h1,h2{text-wrap:balance}p{text-wrap:pretty}
   .motion-item.reveal{transition:none!important;opacity:1!important;transform:none!important}
   .btn::after,.downloadbtn::after,.instagram-btn::after{display:none}
 }
+
+/* Desempenho: renderização sob demanda e efeitos mais leves em telas sensíveis. */
+.section,.contact,footer{content-visibility:auto;contain-intrinsic-size:auto 760px}
+.performance-mode .gridbg,.performance-mode .logo,.performance-mode .float,.performance-mode .download{animation:none!important}
+.performance-mode .logo{transform:rotate(-5deg);will-change:auto}
+.performance-mode .float{transform:none}
+.performance-mode .hero::before,.performance-mode .download::after,.performance-mode .contact::before{filter:none}
+.performance-mode .motion-item.reveal{transition:none!important;opacity:1!important;transform:none!important}
+.performance-mode .btn::after,.performance-mode .downloadbtn::after,.performance-mode .instagram-btn::after{display:none}
+@media(max-width:900px){
+  nav,nav.menu-open,nav ul,nav::after,.contact .contact-card,.field-arrow{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+  nav.menu-open{background:#061814fc;box-shadow:0 10px 30px #0004}
+  nav ul{background:#081b17fd;box-shadow:0 20px 45px #0007}
+  nav::after{background:#020d0ad9}
+  .hero::before,.download::after,.contact::before{filter:none}
+  .gridbg,.logo,.float,.download{animation:none!important}
+  .logo{transform:rotate(-5deg);will-change:auto}
+  .float{transform:none}
+}
+@media(hover:none){
+  .btn::after,.downloadbtn::after,.instagram-btn::after{display:none}
+  .btn:hover,.downloadbtn:hover,.instagram-btn:hover,.steps article:hover,.startup-grid article:hover,
+  .stats p:hover,.showcase:hover,.device:hover,.field-gallery:hover,.people article:hover,.photos img:hover{transform:none}
+  .showcase:hover>img,.device:hover img,.people article:hover img{transform:none;filter:none}
+}
