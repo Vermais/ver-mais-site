@@ -5,6 +5,11 @@
   var menu = document.getElementById('menu');
   var themeToggle = document.getElementById('themeToggle');
   var scrollProgress = document.getElementById('scrollProgress');
+  var reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var lightweightMode = matchMedia('(max-width: 900px), (pointer: coarse)').matches ||
+    (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4) ||
+    (navigator.deviceMemory && navigator.deviceMemory <= 4);
+  if (lightweightMode) root.classList.add('performance-mode');
 
   function updateThemeLabel() {
     var dark = root.dataset.theme === 'dark';
@@ -15,7 +20,7 @@
   }
   themeToggle.addEventListener('click', function () {
     var next = root.dataset.theme === 'dark' ? 'light' : 'dark';
-    var reducedMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var reducedMotion = reduceMotion || lightweightMode;
     if (!reducedMotion) {
       themeToggle.classList.remove('is-switching');
       void themeToggle.offsetWidth;
@@ -62,9 +67,11 @@
   function updateScrollChrome() {
     scrollFrame = 0;
     nav.classList.toggle('scrolled', scrollY > 12);
-    var scrollable = document.documentElement.scrollHeight - innerHeight;
-    var progress = scrollable > 0 ? Math.min(1, Math.max(0, scrollY / scrollable)) : 0;
-    scrollProgress.style.transform = 'scaleX(' + progress + ')';
+    if (!lightweightMode) {
+      var scrollable = document.documentElement.scrollHeight - innerHeight;
+      var progress = scrollable > 0 ? Math.min(1, Math.max(0, scrollY / scrollable)) : 0;
+      scrollProgress.style.transform = 'scaleX(' + progress + ')';
+    }
   }
   addEventListener('scroll', function () {
     if (!scrollFrame) scrollFrame = requestAnimationFrame(updateScrollChrome);
@@ -72,11 +79,6 @@
   addEventListener('resize', updateScrollChrome, { passive: true });
   updateScrollChrome();
 
-  var reduceMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var lightweightMode = matchMedia('(max-width: 900px), (pointer: coarse)').matches ||
-    (navigator.hardwareConcurrency && navigator.hardwareConcurrency <= 4) ||
-    (navigator.deviceMemory && navigator.deviceMemory <= 4);
-  if (lightweightMode) root.classList.add('performance-mode');
   if (!lightweightMode) {
     document.querySelectorAll('.steps article,.stats p,.features li,.people article,.photos img,.startup-grid article').forEach(function (element, index) {
       element.classList.add('reveal', 'motion-item');
@@ -120,25 +122,41 @@
   downloadButton.addEventListener('click', function (event) {
     if (downloadButton.getAttribute('aria-disabled') === 'true') event.preventDefault();
   });
-  fetch('https://api.github.com/repos/Vermais/ver-mais-site/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
-    .then(function (response) { if (!response.ok) throw Error('A primeira versão será publicada em breve'); return response.json(); })
-    .then(function (release) {
-      var apk = release.assets.find(function (asset) { return /\.apk$/i.test(asset.name); });
-      if (!apk) throw Error('A versão mais recente ainda não possui APK');
-      downloadButton.href = apk.browser_download_url;
-      downloadButton.classList.remove('loading');
-      downloadButton.removeAttribute('aria-disabled');
-      downloadLabel.textContent = 'Baixar versão mais recente';
-      version.textContent = release.name || release.tag_name;
-      meta.textContent = '● ' + release.tag_name + ' • ' + (apk.size / 1048576).toFixed(0) + ' MB';
-    }).catch(function (error) {
-      downloadButton.href = 'https://github.com/Vermais/ver-mais-site/releases';
-      downloadButton.classList.remove('loading');
-      downloadButton.removeAttribute('aria-disabled');
-      downloadLabel.textContent = 'Acompanhar lançamentos';
-      version.textContent = 'Ver versões no GitHub';
-      meta.textContent = '● ' + error.message;
-    });
+  var releaseRequested = false;
+  function loadLatestRelease() {
+    if (releaseRequested) return;
+    releaseRequested = true;
+    fetch('https://api.github.com/repos/Vermais/ver-mais-site/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
+      .then(function (response) { if (!response.ok) throw Error('A primeira versão será publicada em breve'); return response.json(); })
+      .then(function (release) {
+        var apk = release.assets.find(function (asset) { return /\.apk$/i.test(asset.name); });
+        if (!apk) throw Error('A versão mais recente ainda não possui APK');
+        downloadButton.href = apk.browser_download_url;
+        downloadButton.classList.remove('loading');
+        downloadButton.removeAttribute('aria-disabled');
+        downloadLabel.textContent = 'Baixar versão mais recente';
+        version.textContent = release.name || release.tag_name;
+        meta.textContent = '● ' + release.tag_name + ' • ' + (apk.size / 1048576).toFixed(0) + ' MB';
+      }).catch(function (error) {
+        downloadButton.href = 'https://github.com/Vermais/ver-mais-site/releases';
+        downloadButton.classList.remove('loading');
+        downloadButton.removeAttribute('aria-disabled');
+        downloadLabel.textContent = 'Acompanhar lançamentos';
+        version.textContent = 'Ver versões no GitHub';
+        meta.textContent = '● ' + error.message;
+      });
+  }
+  if ('IntersectionObserver' in window) {
+    var downloadObserver = new IntersectionObserver(function (entries) {
+      if (entries.some(function (entry) { return entry.isIntersecting; })) {
+        loadLatestRelease();
+        downloadObserver.disconnect();
+      }
+    }, { rootMargin: '600px 0px' });
+    downloadObserver.observe(document.getElementById('download'));
+  } else {
+    addEventListener('load', loadLatestRelease, { once: true });
+  }
 
   var records = [
     { src: 'assets/g1.webp', date: '12 de agosto de 2026', dateISO: '2026-08-12', title: 'Registro 16', type: 'Desenvolvimento do projeto', description: 'Desenvolvimento do projeto Ver+, com revisão do aplicativo, testes e melhorias.' },

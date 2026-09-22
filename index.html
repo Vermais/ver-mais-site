@@ -5,37 +5,26 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#061814">
 <meta name="description" content="Ver+ transforma o ambiente em descrições por áudio para ampliar a autonomia de pessoas com deficiência visual.">
-<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Expires" content="0">
 <title>Ver+ | Tecnologia para enxergar além</title>
 <link rel="icon" type="image/svg+xml" href="assets/ver-mais-isologo.svg?v=20260920-5">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400..700&family=Manrope:wght@600..800&display=swap" rel="stylesheet">
 <script>
 history.scrollRestoration='manual';
 if(location.hash)history.replaceState(null,'',location.pathname+location.search);
 document.documentElement.dataset.theme=localStorage.getItem('vermais-theme')||'light';
 function resetToTop(){
-  var root=document.documentElement;
-  root.style.scrollBehavior='auto';
-  scrollTo(0,0);
-  requestAnimationFrame(function(){
-    scrollTo(0,0);
-    requestAnimationFrame(function(){scrollTo(0,0)});
-  });
-  setTimeout(function(){
-    scrollTo(0,0);
-    root.style.removeProperty('scroll-behavior');
-  },150);
+  document.documentElement.scrollTop=0;
+  if(document.body)document.body.scrollTop=0;
 }
 resetToTop();
 addEventListener('DOMContentLoaded',resetToTop,{once:true});
 addEventListener('load',resetToTop,{once:true});
 addEventListener('pageshow',resetToTop);
 </script>
-<link rel="stylesheet" href="style.css?v=20260922-1">
-<script src="script.js?v=20260922-1" defer>
+<link rel="stylesheet" href="style.css?v=20260922-2">
+<script src="script.js?v=20260922-2" defer>
 </script>
 </head>
 <body>

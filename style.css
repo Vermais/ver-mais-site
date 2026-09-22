@@ -301,10 +301,10 @@ h1,h2{text-wrap:balance}p{text-wrap:pretty}
 }
 @media(max-width:900px){#menu a.active:not(.pill){background:linear-gradient(145deg,#9acdaf20,#ffffff0a);border-color:#9acdaf55;box-shadow:inset 3px 0 0 #9acdaf}}
 .hero::before{content:"";position:absolute;width:560px;height:560px;right:-180px;top:-210px;border-radius:50%;pointer-events:none;background:radial-gradient(circle,#74b79524 0,#39e48c0b 42%,transparent 70%);filter:blur(5px)}
-.gridbg{animation:grid-drift 18s linear infinite}
+.gridbg{animation:none}
 .orbit::before{content:"";position:absolute;width:11px;height:11px;left:48px;top:52px;border-radius:50%;background:var(--green);box-shadow:0 0 0 7px #39e48c13,0 0 24px #39e48caa}
-.logo{animation:hero-float 6s ease-in-out infinite;will-change:transform}
-.float.top{animation:card-float 5.4s ease-in-out infinite}.float.bottom{animation:card-float 5.4s ease-in-out -2.7s infinite}
+.logo{animation:none;will-change:auto}
+.float.top,.float.bottom{animation:none}
 .hero .reveal.visible .eyebrow{animation:hero-rise .65s .05s both}.hero .reveal.visible h1{animation:hero-rise .8s .12s both}.hero .reveal.visible .lead{animation:hero-rise .8s .2s both}.hero .reveal.visible .actions{animation:hero-rise .8s .28s both}.hero .reveal.visible .trust{animation:hero-rise .8s .36s both}
 .btn,.downloadbtn,.instagram-btn{position:relative;overflow:hidden;isolation:isolate;transition:transform .28s cubic-bezier(.22,1,.36,1),box-shadow .28s ease,background .28s ease}
 .btn::after,.downloadbtn::after,.instagram-btn::after{content:"";position:absolute;z-index:-1;inset:-60% auto -60% -45%;width:32%;transform:rotate(18deg) translateX(-220%);background:linear-gradient(90deg,transparent,#ffffff70,transparent);transition:transform .65s cubic-bezier(.22,1,.36,1)}
@@ -322,7 +322,7 @@ h1,h2{text-wrap:balance}p{text-wrap:pretty}
 .people article>div{transition:transform .45s cubic-bezier(.22,1,.36,1)}.people article:hover>div{transform:translateY(-5px)}
 .photos img{transition:transform .45s cubic-bezier(.22,1,.36,1),filter .4s ease,box-shadow .4s ease}.photos img:hover{transform:translateY(-6px) scale(1.012);filter:saturate(1.08);box-shadow:0 20px 45px #06181428}
 .motion-item.reveal{transition-delay:var(--delay,0ms);transition-duration:.75s;transition-timing-function:cubic-bezier(.22,1,.36,1)}
-.download{position:relative;overflow:hidden;background-size:180% 180%;animation:download-glow 10s ease infinite}.download::after{content:"";position:absolute;width:260px;height:260px;right:-110px;top:-120px;border-radius:50%;background:#ffffff20;filter:blur(4px);pointer-events:none}
+.download{position:relative;overflow:hidden;background-size:180% 180%;animation:none}.download::after{content:"";position:absolute;width:260px;height:260px;right:-110px;top:-120px;border-radius:50%;background:#ffffff20;filter:none;pointer-events:none}
 .contact{position:relative;overflow:hidden}.contact::before{content:"";position:absolute;width:420px;height:420px;right:-170px;bottom:-250px;border-radius:50%;background:#9acdaf14;filter:blur(2px);pointer-events:none}
 @keyframes hero-rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 @keyframes hero-float{0%,100%{transform:rotate(-5deg) translateY(0)}50%{transform:rotate(-2deg) translateY(-13px)}}
@@ -347,6 +347,7 @@ h1,h2{text-wrap:balance}p{text-wrap:pretty}
 .performance-mode .hero::before,.performance-mode .download::after,.performance-mode .contact::before{filter:none}
 .performance-mode .motion-item.reveal{transition:none!important;opacity:1!important;transform:none!important}
 .performance-mode .btn::after,.performance-mode .downloadbtn::after,.performance-mode .instagram-btn::after{display:none}
+.performance-mode .scroll-progress{display:none}
 @media(max-width:900px){
   nav,nav.menu-open,nav ul,nav::after,.contact .contact-card,.field-arrow{backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
   nav.menu-open{background:#061814fc;box-shadow:0 10px 30px #0004}
