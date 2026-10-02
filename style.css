@@ -364,3 +364,33 @@ h1,h2{text-wrap:balance}p{text-wrap:pretty}
   .stats p:hover,.showcase:hover,.device:hover,.field-gallery:hover,.people article:hover,.photos img:hover{transform:none}
   .showcase:hover>img,.device:hover img,.people article:hover img{transform:none;filter:none}
 }
+
+/* Imagens responsivas e cartão do modelo 3D sem deformação. */
+img{height:auto}
+.device{
+  align-self:center;overflow:hidden;padding:12px;border-color:#c8e8d52b;
+  background:linear-gradient(145deg,#102c25,#081a16);
+  box-shadow:0 24px 65px #0004,inset 0 1px 0 #ffffff0d;
+}
+.device img{
+  width:100%;height:auto;aspect-ratio:6/5;object-fit:contain;
+  border-radius:20px;background:radial-gradient(circle at 50% 42%,#1c4337 0,#0a201a 72%);
+}
+.device figcaption{
+  display:flex;align-items:center;gap:9px;padding:14px 8px 4px;
+  color:#c0d5ca;font-weight:600;letter-spacing:.01em;
+}
+.device figcaption::before{
+  content:"";flex:0 0 7px;width:7px;height:7px;border-radius:50%;
+  background:#9acdaf;box-shadow:0 0 0 5px #9acdaf16;
+}
+@media(max-width:900px){
+  #dispositivo .two{gap:48px}
+  .device{width:min(100%,680px);justify-self:center}
+}
+@media(max-width:580px){
+  #dispositivo .two{gap:34px}
+  .device{padding:8px;border-radius:23px}
+  .device img{border-radius:16px}
+  .device figcaption{padding:12px 7px 5px;font-size:.72rem;line-height:1.45}
+}
