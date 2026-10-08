@@ -366,14 +366,14 @@ h1,h2{text-wrap:balance}p{text-wrap:pretty}
 }
 
 /* Imagens responsivas e cartão do modelo 3D sem deformação. */
-img{height:auto}
+img{max-width:100%;height:auto}
 .device{
   align-self:center;overflow:hidden;padding:12px;border-color:#c8e8d52b;
   background:linear-gradient(145deg,#102c25,#081a16);
   box-shadow:0 24px 65px #0004,inset 0 1px 0 #ffffff0d;
 }
 .device img{
-  width:100%;height:auto;aspect-ratio:6/5;object-fit:contain;
+  display:block;width:100%;max-width:100%;height:auto;aspect-ratio:auto;object-fit:contain;
   border-radius:20px;background:radial-gradient(circle at 50% 42%,#1c4337 0,#0a201a 72%);
 }
 .device figcaption{
