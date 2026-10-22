@@ -26,6 +26,29 @@ addEventListener('pageshow',resetToTop);
 <link rel="stylesheet" href="style.css?v=20261008-1">
 <script src="script.js?v=20260922-2" defer>
 </script>
+<style id="app-description-styles">
+.app-description{margin-top:48px;max-width:980px}
+.app-description .app-intro{max-width:760px;margin-bottom:30px}
+.app-description h2{font:800 clamp(2rem,4vw,3rem)/1.15 var(--display);letter-spacing:-.045em;margin:12px 0 20px}
+.app-description .app-lead{font-size:1.15rem;color:var(--deep)}
+.app-description .app-badges{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0}
+.app-description .app-badges span{padding:6px 12px;border:1px solid #43836555;border-radius:99px;font-size:.8rem;font-weight:700;background:var(--mint)}
+.app-description details{border:1px solid #43836540;border-radius:18px;margin:12px 0;background:#fffdfa;overflow:hidden}
+.app-description summary{cursor:pointer;min-height:64px;padding:20px 24px;font-family:var(--display);font-weight:800;line-height:1.4}
+.app-description summary::marker{color:var(--deep)}
+.app-description summary:focus-visible{outline:3px solid #b28000;outline-offset:-5px;border-radius:16px}
+.app-description details[open] summary{border-bottom:1px solid #43836530;background:var(--mint)}
+.app-description .app-copy{padding:6px 24px 18px;overflow-wrap:anywhere}
+.app-description .app-copy ul{padding-left:22px;margin:16px 0}
+.app-description .app-copy li{padding-left:4px;margin:10px 0}
+.app-description .app-tagline{margin:28px 0 0;font-weight:800;color:var(--deep)}
+html[data-theme=dark] .app-description details{background:#18231f;border-color:#9acdaf40}
+html[data-theme=dark] .app-description details[open] summary{background:#243a31;border-color:#9acdaf30}
+html[data-theme=dark] .app-description .app-lead,html[data-theme=dark] .app-description .app-tagline{color:#b8dec9}
+html[data-theme=dark] .app-description .app-badges span{background:#243a31;border-color:#9acdaf40}
+@media(max-width:580px){.app-description{margin-top:36px}.app-description summary{padding:18px 16px}.app-description .app-copy{padding:4px 16px 14px}}
+@media(forced-colors:active){.app-description details,.app-description .app-badges span{border:1px solid CanvasText}.app-description summary:focus-visible{outline-color:Highlight}}
+</style>
 </head>
 <body>
 <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
@@ -237,6 +260,93 @@ addEventListener('pageshow',resetToTop);
 <small>Arquivo APK • Android 9 ou superior</small>
 </div>
 </div>
+<article class="wrap app-description" id="app-detalhes" aria-labelledby="app-description-title">
+<header class="app-intro">
+<p class="kicker">Sobre o aplicativo</p>
+<h2 id="app-description-title">Ver+ — O mundo, em palavras</h2>
+<p class="app-lead">Descreva cenas com IA, ouça respostas e leia textos e cores sem internet.</p>
+<p>O Ver+ transforma informações visuais em palavras e áudio. Desenvolvido para apoiar pessoas cegas ou com baixa visão, reúne descrição de cenas com inteligência artificial, perguntas sobre imagens e leitura de textos em uma interface em português.</p>
+<p>Use a câmera do celular ou tablet, escolha uma ação e acompanhe o resultado por voz ou na tela.</p>
+<div class="app-badges" aria-label="Informações do aplicativo"><span>Versão 1.0.1 · MVP</span><span>Android 9 ou superior</span><span>Interface em português</span></div>
+</header>
+<details open>
+<summary>Descrição de cenas com IA</summary>
+<div class="app-copy">
+<ul>
+<li>Conheça elementos visíveis na imagem, como objetos, pessoas e características do ambiente.</li>
+<li>Escolha entre descrições rápidas ou detalhadas.</li>
+<li>Faça perguntas por voz ou digitando, como “O que está sobre a mesa?”.</li>
+<li>Ative a descrição automática, com novas análises em intervalos de 30 segundos enquanto a tela de câmera estiver em uso.</li>
+<li>Repita a última descrição ou interrompa a análise e a narração quando precisar.</li>
+<li>Acompanhe o andamento e o tempo da análise.</li>
+</ul>
+</div>
+</details>
+<details>
+<summary>Texto e cores sem internet</summary>
+<div class="app-copy">
+<ul>
+<li>Reconheça textos impressos em papéis, embalagens e outras superfícies.</li>
+<li>Ouça o texto reconhecido ou leia o resultado na tela.</li>
+<li>Navegue entre trechos de leituras longas.</li>
+<li>Identifique a cor aproximada da região central da imagem.</li>
+<li>Processe texto e cores diretamente no aparelho, sem enviar essas imagens para análise online.</li>
+</ul>
+<p>Para melhores resultados, mantenha a câmera firme e a cena bem iluminada. A identificação de cores funciona melhor com superfícies lisas ocupando o centro da imagem.</p>
+</div>
+</details>
+<details>
+<summary>Voz e acessibilidade</summary>
+<div class="app-copy">
+<ul>
+<li>Interface compatível com TalkBack.</li>
+<li>Botões identificados e suporte a fontes ampliadas.</li>
+<li>Resultados disponíveis em texto e áudio.</li>
+<li>Escolha entre as vozes compatíveis instaladas no Android.</li>
+<li>Controles para repetir e parar a narração.</li>
+<li>Layout adaptado para celulares e tablets, na vertical e na horizontal.</li>
+</ul>
+<p>Para ouvir sem internet, é necessário ter uma voz em português instalada no aparelho.</p>
+</div>
+</details>
+<details>
+<summary>Opções de câmera</summary>
+<div class="app-copy">
+<ul>
+<li>Uso das câmeras disponíveis no celular ou tablet.</li>
+<li>Alternância entre câmeras compatíveis.</li>
+<li>Acesso a câmeras externas reconhecidas pelo Android, conforme a compatibilidade do aparelho e do acessório.</li>
+<li>Integração experimental com o protótipo de câmera Ver+ por Bluetooth, incluindo captura de imagens, leitura de texto e descrição de cenas.</li>
+</ul>
+</div>
+</details>
+<details>
+<summary>Configuração da inteligência artificial</summary>
+<div class="app-copy">
+<p>O aplicativo oferece uma área para configurar e testar o serviço de IA. Na edição pública, as descrições de cenas e respostas sobre imagens exigem internet e uma chave pessoal de acesso ao serviço.</p><p>Texto e cores continuam disponíveis no modo sem internet.</p>
+</div>
+</details>
+<details>
+<summary>Novidades da versão 1.0.1</summary>
+<div class="app-copy">
+<ul>
+<li>Correção da tela inicial em tablets na vertical.</li>
+<li>Melhor encaixe da logo nas telas do aplicativo.</li>
+<li>Acesso à câmera do celular em destaque na tela inicial.</li>
+<li>Ajustes de espaçamento para tablets.</li>
+<li>Ícone da gaveta corrigido, com suporte aos ícones temáticos do Android.</li>
+<li>Correções do ícone aplicadas mantendo a mesma versão 1.0.1.</li>
+</ul>
+</div>
+</details>
+<details>
+<summary>Requisitos e limitações</summary>
+<div class="app-copy">
+<p>Disponível para Android 9 ou superior. Câmera necessária para captura; microfone utilizado nas perguntas por voz; Bluetooth utilizado na conexão com o protótipo Ver+.</p><p>O Ver+ está em fase de MVP. As respostas da IA, a leitura de textos e a estimativa de cores podem conter erros. O aplicativo oferece apoio informativo e não deve ser usado para decidir se é seguro atravessar uma rua ou realizar outras ações que dependam de avaliação de risco.</p>
+</div>
+</details>
+<p class="app-tagline">Ver+ — Tecnologia para enxergar possibilidades.</p>
+</article>
 </section>
 <section id="equipe" class="section team">
 <div class="wrap">
