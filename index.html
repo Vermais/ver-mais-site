@@ -27,6 +27,9 @@ addEventListener('pageshow',resetToTop);
 <script src="script.js?v=20260922-2" defer>
 </script>
 <style id="app-description-styles">
+.notebook-download{margin-top:16px;border:1px solid #dff7ec66;background:#123b32;font-size:1.5rem}
+.notebook-download:focus-visible{outline:3px solid #ffcf33;outline-offset:4px}
+
 .app-description{margin-top:48px;max-width:980px}
 .app-description .app-intro{max-width:760px;margin-bottom:30px}
 .app-description h2{font:800 clamp(2rem,4vw,3rem)/1.15 var(--display);letter-spacing:-.045em;margin:12px 0 20px}
@@ -258,6 +261,9 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 </span>
 </a>
 <small>Arquivo APK • Android 9 ou superior</small>
+<a id="notebookDownload" class="downloadbtn notebook-download" href="https://github.com/Vermais/ver-mais-site/releases/download/v1.0.1/ver-mais-camera-notebook-windows.zip">↔ <span><small>Para usar a webcam do notebook</small><b>Baixar programa para Windows</b></span></a>
+<small>Windows 10/11 de 64 bits • Extraia o ZIP inteiro</small>
+
 </div>
 </div>
 <article class="wrap app-description" id="app-detalhes" aria-labelledby="app-description-title">
@@ -317,7 +323,23 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 <li>Alternância entre câmeras compatíveis.</li>
 <li>Acesso a câmeras externas reconhecidas pelo Android, conforme a compatibilidade do aparelho e do acessório.</li>
 <li>Integração experimental com o protótipo de câmera Ver+ por Bluetooth, incluindo captura de imagens, leitura de texto e descrição de cenas.</li>
+<li>Uso da webcam do notebook Windows por Bluetooth clássico, com o programa Ver+ Câmera do Notebook, pareamento e código de conexão.</li>
 </ul>
+</div>
+</details>
+<details>
+<summary>Câmera do notebook por Bluetooth</summary>
+<div class="app-copy">
+<p>Compartilhe fotos da webcam de um notebook Windows com o app Ver+ no celular ou tablet. Cada captura pode ser usada para leitura de texto sem internet ou descrição de cena com IA. A voz é reproduzida pelo celular ou tablet.</p>
+<ol>
+<li>Baixe o programa para Windows acima, extraia o ZIP inteiro e abra <strong>Ver+ Camera do Notebook.exe</strong>, mantendo a pasta <strong>_internal</strong> junto do executável.</li>
+<li>Pareie o notebook com o celular ou tablet nos ajustes Bluetooth dos dois aparelhos.</li>
+<li>No programa Windows, escolha a webcam e clique em <strong>Iniciar compartilhamento</strong>.</li>
+<li>No app atualizado, escolha <strong>Usar câmera do notebook · Bluetooth</strong>, toque em <strong>Conectar</strong>, selecione o notebook e digite o código de 16 caracteres mostrado na janela do programa.</li>
+<li>Mantenha as duas telas abertas e use <strong>Ler texto</strong> ou <strong>Descrever cena</strong>. Pare o compartilhamento ou feche a janela quando terminar.</li>
+</ol>
+<p>Requer Windows 10/11 de 64 bits, webcam e adaptador com Bluetooth clássico. Não precisa instalar Python. Só parear não transmite imagens: o programa precisa estar iniciado. São fotos sob demanda, não vídeo contínuo. O código muda quando o compartilhamento reinicia.</p>
+<p>Foram testados webcam em 1280×720, abertura e anúncio do serviço Bluetooth no notebook e os testes de protocolo. A conexão completa com o tablet ainda precisa ser validada após instalar o novo APK.</p>
 </div>
 </details>
 <details>
@@ -335,6 +357,8 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 <li>Acesso à câmera do celular em destaque na tela inicial.</li>
 <li>Ajustes de espaçamento para tablets.</li>
 <li>Ícone da gaveta corrigido, com suporte aos ícones temáticos do Android.</li>
+<li>Logo original restaurada, preservando os traços da marca sem redesenho.</li>
+<li>Nova opção de câmera do notebook por Bluetooth e programa auxiliar para Windows.</li>
 <li>Correções do ícone aplicadas mantendo a mesma versão 1.0.1.</li>
 </ul>
 </div>
