@@ -549,5 +549,131 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 </span> Ver+ • Pereiro, CE</p>
 </div>
 </footer>
+<style id="analytics-privacy-styles">
+.privacy-info{padding:0 24px 28px;max-width:900px;margin:auto;font-size:.9rem}
+.privacy-info summary{cursor:pointer;font-weight:700;padding:12px 0}
+.privacy-info a{color:inherit;text-decoration:underline}
+.privacy-info p{margin:12px 0}
+.analytics-choice{position:fixed;inset:auto 16px 16px;z-index:1000;max-width:740px;margin:auto;padding:20px;border:1px solid #438365;border-radius:16px;background:#fffdfa;color:#123b32;box-shadow:0 8px 32px #0004;font:400 1rem/1.5 'DM Sans',sans-serif;max-height:80vh;overflow:auto}
+.analytics-choice[hidden]{display:none}
+.analytics-choice h2{font-size:1.1rem;margin:0 0 8px}
+.analytics-choice p{margin:0 0 14px}
+.analytics-choice a{color:inherit;text-decoration:underline}
+.analytics-actions{display:flex;gap:12px;flex-wrap:wrap}
+.analytics-actions button,.analytics-settings{font:inherit;padding:10px 16px;min-height:44px;border:1px solid currentColor;border-radius:8px;cursor:pointer;background:transparent;color:inherit}
+.analytics-actions button{flex:1}
+.analytics-actions button:focus-visible,.analytics-settings:focus-visible,.privacy-info summary:focus-visible{outline:3px solid #b28000;outline-offset:3px}
+html[data-theme=dark] .analytics-choice{background:#18231f;color:#dff7ec;border-color:#9acdaf}
+@media(forced-colors:active){.analytics-choice{border:2px solid CanvasText}}
+</style>
+<div class="privacy-info">
+<details id="privacidade">
+<summary>Privacidade e estatísticas de acesso</summary>
+<p>O site Ver+ usa o Google Analytics para medir visitas e visualizações somente quando você permite. O Google recebe dados da página visitada, do navegador, do dispositivo e da origem da visita, podendo estimar a região do acesso. Cookies de estatísticas ajudam a distinguir visitas neste navegador. Não enviamos nomes, e-mails nem parâmetros dos endereços das páginas ao Analytics.</p>
+<p>Você pode recusar ou retirar sua permissão pelo botão abaixo. A escolha fica salva neste navegador por até seis meses. Ao recusar, o site continua funcionando e o código de estatísticas não é carregado. A retirada vale para os próximos acessos e não apaga automaticamente dados já processados.</p>
+<p>O responsável pelo site é o projeto Ver+. Para dúvidas sobre privacidade ou solicitações referentes aos seus dados, escreva para <a href="mailto:vermaismocicult@gmail.com">vermaismocicult@gmail.com</a>. Saiba <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">como o Google usa dados de sites parceiros</a> e consulte a <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidade do Google</a>.</p>
+<button class="analytics-settings" id="analyticsSettings" type="button" hidden>Alterar permissão de estatísticas</button>
+</details>
+</div>
+<section class="analytics-choice" id="analyticsChoice" aria-labelledby="analyticsChoiceTitle" hidden>
+<h2 id="analyticsChoiceTitle">Podemos contar sua visita?</h2>
+<p>Com sua permissão, usamos cookies do Google Analytics para contar visitas e visualizações e melhorar o site Ver+. Você pode recusar e continuar navegando. <a href="#privacidade" id="analyticsPrivacyLink">Saiba mais sobre privacidade</a>.</p>
+<div class="analytics-actions">
+<button id="analyticsAccept" type="button">Permitir estatísticas</button>
+<button id="analyticsReject" type="button">Recusar estatísticas</button>
+</div>
+</section>
+<script id="vermais-analytics">
+(function () {
+  'use strict';
+  var measurementId = 'G-85LB240T6G';
+  var storageKey = 'vermais-analytics-consent';
+  var choiceLifetime = 180 * 24 * 60 * 60 * 1000;
+  var banner = document.getElementById('analyticsChoice');
+  var settings = document.getElementById('analyticsSettings');
+  var started = false;
+  var production = location.hostname === 'vermais.github.io' &&
+    /^\/ver-mais-site(?:\/|$)/.test(location.pathname);
+  if (!production) return;
+
+  function readChoice() {
+    try {
+      var saved = JSON.parse(localStorage.getItem(storageKey));
+      if (saved && saved.expires > Date.now() &&
+          (saved.value === 'granted' || saved.value === 'denied')) return saved.value;
+    } catch (error) { /* Storage may be unavailable; ask again on the next visit. */ }
+    return null;
+  }
+  function saveChoice(value) {
+    try {
+      localStorage.setItem(storageKey, JSON.stringify({ value: value, expires: Date.now() + choiceLifetime }));
+    } catch (error) { /* The choice still applies to this page. */ }
+  }
+  function clearAnalyticsCookies() {
+    document.cookie.split(';').forEach(function (cookie) {
+      var name = cookie.trim().split('=')[0];
+      if (name !== '_ga' && name.indexOf('_ga_') !== 0) return;
+      var expired = name + '=; Max-Age=0; path=/; SameSite=Lax';
+      document.cookie = expired;
+      document.cookie = expired + '; domain=' + location.hostname;
+      document.cookie = expired + '; domain=.' + location.hostname;
+    });
+  }
+  function cleanUrl(value) {
+    try { var url = new URL(value); return url.origin + url.pathname; }
+    catch (error) { return ''; }
+  }
+  function startAnalytics() {
+    if (started) return;
+    started = true;
+    window['ga-disable-' + measurementId] = false;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('consent', 'default', {
+      analytics_storage: 'granted', ad_storage: 'denied',
+      ad_user_data: 'denied', ad_personalization: 'denied'
+    });
+    window.gtag('js', new Date());
+    window.gtag('config', measurementId, {
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false,
+      page_location: location.origin + location.pathname,
+      page_referrer: cleanUrl(document.referrer),
+      cookie_expires: 15552000,
+      cookie_update: false
+    });
+    var tag = document.createElement('script');
+    tag.async = true;
+    tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + measurementId;
+    document.head.appendChild(tag);
+  }
+  function setChoice(value) {
+    saveChoice(value);
+    banner.hidden = true;
+    if (value === 'granted') startAnalytics();
+    else {
+      window['ga-disable-' + measurementId] = true;
+      clearAnalyticsCookies();
+      if (started) location.reload();
+    }
+  }
+  settings.hidden = false;
+  settings.addEventListener('click', function () {
+    banner.hidden = false;
+    document.getElementById('analyticsAccept').focus();
+  });
+  document.getElementById('analyticsAccept').addEventListener('click', function () { setChoice('granted'); });
+  document.getElementById('analyticsReject').addEventListener('click', function () { setChoice('denied'); });
+  document.getElementById('analyticsPrivacyLink').addEventListener('click', function () {
+    document.getElementById('privacidade').open = true;
+    banner.hidden = true;
+    settings.focus();
+  });
+  var choice = readChoice();
+  if (choice === 'granted') startAnalytics();
+  else if (choice === 'denied') clearAnalyticsCookies();
+  else banner.hidden = false;
+}());
+</script>
 </body>
 </html>
