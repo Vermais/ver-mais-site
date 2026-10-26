@@ -24,7 +24,7 @@ addEventListener('load',resetToTop,{once:true});
 addEventListener('pageshow',resetToTop);
 </script>
 <link rel="stylesheet" href="style.css?v=20261008-1">
-<script src="script.js?v=20261026-104" defer>
+<script src="script.js?v=20261026-105" defer>
 </script>
 <style id="app-description-styles">
 
@@ -250,13 +250,13 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 <p class="kicker">Experimente o Ver+</p>
 <h2>A tecnologia começa com um toque.</h2>
 <p>Baixe gratuitamente o Ver+ para Android. Texto e cores funcionam sem internet; descrições de cenas exigem internet e uma chave pessoal de IA configurada no app. O botão acompanha os novos lançamentos.</p>
-<p id="meta" class="meta" aria-live="polite">● v1.0.4 • Versão de teste • 49 MB</p>
-<p>Esta versão traz descrições progressivas e melhorias na recuperação de falhas. A validação prática de câmera, voz e TalkBack em Android ainda está pendente; o serviço de IA pode apresentar erros e demora.</p>
+<p id="meta" class="meta" aria-live="polite">● v1.0.5 • Versão de teste • 49 MB</p>
+<p>Esta versão corrige reenvios de solicitações de IA e amplia os registros de diagnóstico. A demora e as falhas ainda podem ocorrer; a validação prática de câmera, voz e TalkBack em Android continua pendente.</p>
 </div>
 <div>
-<a id="downloadBtn" class="downloadbtn" data-release-tag="v1.0.4" href="https://github.com/Vermais/ver-mais-site/releases/download/v1.0.4/ver-mais-v1.0.4-teste.apk">↓ <span>
+<a id="downloadBtn" class="downloadbtn" data-release-tag="v1.0.5" href="https://github.com/Vermais/ver-mais-site/releases/download/v1.0.5/ver-mais-v1.0.5-teste.apk">↓ <span>
 <small id="downloadLabel">Baixar versão de teste para Android</small>
-<b id="version">Ver+ 1.0.4 — Descrições progressivas</b>
+<b id="version">Ver+ 1.0.5 — Descrições e diagnóstico</b>
 </span>
 </a>
 <small>Arquivo APK • Android 9 ou superior</small>
@@ -269,7 +269,7 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 <p class="app-lead">Descreva cenas com IA, ouça respostas e leia textos e cores sem internet.</p>
 <p>O Ver+ transforma informações visuais em palavras e áudio. Desenvolvido para apoiar pessoas cegas ou com baixa visão, reúne descrição de cenas com inteligência artificial, perguntas sobre imagens e leitura de textos em uma interface em português.</p>
 <p>Use a câmera do celular ou tablet, escolha uma ação e acompanhe o resultado por voz ou na tela.</p>
-<div class="app-badges" aria-label="Informações do aplicativo"><span>Versão 1.0.4 · MVP em teste</span><span>Android 9 ou superior</span><span>Interface em português</span></div>
+<div class="app-badges" aria-label="Informações do aplicativo"><span>Versão 1.0.5 · MVP em teste</span><span>Android 9 ou superior</span><span>Interface em português</span></div>
 </header>
 <details open>
 <summary>Descrição de cenas com IA</summary>
@@ -343,27 +343,21 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 <summary>Configuração da inteligência artificial</summary>
 <div class="app-copy">
 <p>O aplicativo oferece uma área para configurar e testar o serviço de IA. Na edição pública, as descrições de cenas e respostas sobre imagens exigem internet e uma chave pessoal de acesso ao serviço.</p><p>Texto e cores continuam disponíveis no modo sem internet.</p>
+<p><strong>Consumo da API:</strong> a versão 1.0.5 ainda não oferece uma tela de consumo no aplicativo. Quando o serviço informa, os tokens ficam apenas nos registros de diagnóstico. Saldo, cotas restantes e custos não são exibidos no app.</p>
 </div>
 </details>
 <details>
-<summary>Novidades da versão 1.0.4 — em teste</summary>
+<summary>Novidades da versão 1.0.5 — em teste</summary>
 <div class="app-copy">
 <ul>
-<li>Entrega progressiva de frases completas e narração dos trechos novos, sem repetir toda a resposta ao terminar.</li>
-<li>Imagens mais compactas e orientações específicas para os níveis Rápida, Média e Detalhada.</li>
-<li>Recuperação de falhas transitórias, botão Tentar novamente e proteção contra pedidos duplicados ou respostas antigas.</li>
-<li>Nível, preferências pessoais e velocidade da voz preservados.</li>
-<li>127 testes automatizados aprovados. A comparação com a API real mostrou antecipação do primeiro retorno em parte dos testes, mas ainda houve falha do serviço e variação no tempo total.</li>
-<li>O início audível da voz, a captura física e os fluxos com TalkBack ainda precisam de testes em aparelho Android.</li>
-<li>Correção da divergência entre a prévia frontal espelhada e a imagem enviada à IA, sem substituir palavras na resposta.</li>
-<li>Velocidade da voz salva, com cinco opções, amostra e controle para parar.</li>
-<li>Revisão de acessibilidade e prioridade do leitor de tela também no fluxo Bluetooth.</li>
-<li>Três níveis de descrição: Detalhada, Média e Rápida.</li>
-<li>Preferências da IA opcionais, salvas e editáveis no aplicativo.</li>
-<li>Prioridades pessoais combinadas com o nível em descrições e perguntas.</li>
-<li>Câmeras do celular e do protótipo Ver+, leitura de texto, cores, voz e recursos existentes mantidos.</li>
-<li>Validação prática com TalkBack, câmeras físicas e respostas espaciais da IA em cenas reais ainda pendente.</li>
+<li>Correção de reenvios ocultos de solicitações, com controle das tentativas após falhas.</li>
+<li>Registros de diagnóstico mais completos, incluindo tempos por etapa e tokens quando informados pelo serviço.</li>
+<li>Instruções para concluir as frases dentro dos limites de cada nível, mantendo Rápida, Média e Detalhada.</li>
+<li>Descrição progressiva, preferências pessoais e velocidade da voz mantidas; correção do aviso de erro por voz no fluxo do protótipo.</li>
+<li>138 testes locais aprovados e 60 chamadas reais de comparação. Os tempos melhoraram em parte dos testes, mas ainda houve variação e falhas por prazo; a lentidão não está totalmente resolvida.</li>
+<li>Captura física, início sonoro real e TalkBack ainda precisam de validação em Android. As respostas da IA podem conter imprecisões.</li>
 </ul>
+<p><a href="https://github.com/Vermais/ver-mais-site/blob/main/.github/release-105/DESEMPENHO_E_VALIDACAO.md">Leia o relatório de desempenho, testes e limitações da versão 1.0.5.</a></p>
 </div>
 </details>
 <details>
