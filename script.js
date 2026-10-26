@@ -123,6 +123,17 @@
   var fallbackDownloadUrl = downloadButton.href;
   var fallbackVersion = version.textContent;
   var fallbackMeta = meta.textContent;
+  var fallbackLabel = downloadLabel.textContent;
+  var currentReleaseTag = downloadButton.dataset.releaseTag;
+  function olderRelease(tag, minimum) {
+    var candidate = /^v?(\d+)\.(\d+)\.(\d+)$/.exec(tag || '');
+    var current = /^v?(\d+)\.(\d+)\.(\d+)$/.exec(minimum || '');
+    if (!candidate || !current) return true;
+    for (var i = 1; i <= 3; i++) {
+      if (+candidate[i] !== +current[i]) return +candidate[i] < +current[i];
+    }
+    return false;
+  }
   downloadButton.addEventListener('click', function (event) {
     if (downloadButton.getAttribute('aria-disabled') === 'true') event.preventDefault();
   });
@@ -133,19 +144,21 @@
     fetch('https://api.github.com/repos/Vermais/ver-mais-site/releases/latest', { headers: { Accept: 'application/vnd.github+json' } })
       .then(function (response) { if (!response.ok) throw Error('A primeira versão será publicada em breve'); return response.json(); })
       .then(function (release) {
+        // GitHub latest excludes prereleases. Preserve a newer test APK.
+        if (olderRelease(release.tag_name, currentReleaseTag)) return;
         var apk = release.assets.find(function (asset) { return /\.apk$/i.test(asset.name); });
         if (!apk) throw Error('A versão mais recente ainda não possui APK');
         downloadButton.href = apk.browser_download_url;
         downloadButton.classList.remove('loading');
         downloadButton.removeAttribute('aria-disabled');
-        downloadLabel.textContent = 'Baixar versão mais recente';
+        downloadLabel.textContent = release.prerelease ? 'Baixar versão de teste para Android' : 'Baixar para Android';
         version.textContent = release.name || release.tag_name;
         meta.textContent = '● ' + release.tag_name + ' • ' + (apk.size / 1048576).toFixed(0) + ' MB';
       }).catch(function (error) {
         downloadButton.href = fallbackDownloadUrl;
         downloadButton.classList.remove('loading');
         downloadButton.removeAttribute('aria-disabled');
-        downloadLabel.textContent = 'Baixar para Android';
+        downloadLabel.textContent = fallbackLabel;
         version.textContent = fallbackVersion;
         meta.textContent = fallbackMeta;
       });

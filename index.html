@@ -24,7 +24,7 @@ addEventListener('load',resetToTop,{once:true});
 addEventListener('pageshow',resetToTop);
 </script>
 <link rel="stylesheet" href="style.css?v=20261008-1">
-<script src="script.js?v=20261026-103" defer>
+<script src="script.js?v=20261026-104" defer>
 </script>
 <style id="app-description-styles">
 
@@ -250,12 +250,13 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 <p class="kicker">Experimente o Ver+</p>
 <h2>A tecnologia começa com um toque.</h2>
 <p>Baixe gratuitamente o Ver+ para Android. Texto e cores funcionam sem internet; descrições de cenas exigem internet e uma chave pessoal de IA configurada no app. O botão acompanha os novos lançamentos.</p>
-<p id="meta" class="meta" aria-live="polite">● v1.0.3 • 49 MB</p>
+<p id="meta" class="meta" aria-live="polite">● v1.0.4 • Versão de teste • 49 MB</p>
+<p>Esta versão traz descrições progressivas e melhorias na recuperação de falhas. A validação prática de câmera, voz e TalkBack em Android ainda está pendente; o serviço de IA pode apresentar erros e demora.</p>
 </div>
 <div>
-<a id="downloadBtn" class="downloadbtn" href="https://github.com/Vermais/ver-mais-site/releases/download/v1.0.3/ver-mais-v1.0.3.apk">↓ <span>
-<small id="downloadLabel">Baixar para Android</small>
-<b id="version">Ver+ 1.0.3 — Orientação, voz e acessibilidade</b>
+<a id="downloadBtn" class="downloadbtn" data-release-tag="v1.0.4" href="https://github.com/Vermais/ver-mais-site/releases/download/v1.0.4/ver-mais-v1.0.4-teste.apk">↓ <span>
+<small id="downloadLabel">Baixar versão de teste para Android</small>
+<b id="version">Ver+ 1.0.4 — Descrições progressivas</b>
 </span>
 </a>
 <small>Arquivo APK • Android 9 ou superior</small>
@@ -268,7 +269,7 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 <p class="app-lead">Descreva cenas com IA, ouça respostas e leia textos e cores sem internet.</p>
 <p>O Ver+ transforma informações visuais em palavras e áudio. Desenvolvido para apoiar pessoas cegas ou com baixa visão, reúne descrição de cenas com inteligência artificial, perguntas sobre imagens e leitura de textos em uma interface em português.</p>
 <p>Use a câmera do celular ou tablet, escolha uma ação e acompanhe o resultado por voz ou na tela.</p>
-<div class="app-badges" aria-label="Informações do aplicativo"><span>Versão 1.0.3 · MVP</span><span>Android 9 ou superior</span><span>Interface em português</span></div>
+<div class="app-badges" aria-label="Informações do aplicativo"><span>Versão 1.0.4 · MVP em teste</span><span>Android 9 ou superior</span><span>Interface em português</span></div>
 </header>
 <details open>
 <summary>Descrição de cenas com IA</summary>
@@ -280,6 +281,8 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 <li>Ative a descrição automática, com novas análises em intervalos de 30 segundos enquanto a tela de câmera estiver em uso.</li>
 <li>Repita a última descrição ou interrompa a análise e a narração quando precisar.</li>
 <li>Acompanhe o andamento e o tempo da análise.</li>
+<li>Receba frases completas progressivamente, quando o serviço de IA permitir, sem esperar todo o texto para começar a leitura.</li>
+<li>Se ocorrer uma falha, use <strong>Tentar novamente</strong> para analisar uma nova captura. A descrição automática pausa após erros.</li>
 </ul>
 </div>
 </details>
@@ -300,7 +303,7 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 <summary>Voz e acessibilidade</summary>
 <div class="app-copy">
 <ul>
-<li>Interface compatível com TalkBack.</li>
+<li>Recursos de apoio ao TalkBack, com validação prática em Android ainda pendente.</li>
 <li>Botões identificados e suporte a fontes ampliadas.</li>
 <li>Resultados disponíveis em texto e áudio.</li>
 <li>Escolha entre as vozes compatíveis instaladas no Android.</li>
@@ -343,13 +346,18 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 </div>
 </details>
 <details>
-<summary>Novidades da versão 1.0.3</summary>
+<summary>Novidades da versão 1.0.4 — em teste</summary>
 <div class="app-copy">
 <ul>
+<li>Entrega progressiva de frases completas e narração dos trechos novos, sem repetir toda a resposta ao terminar.</li>
+<li>Imagens mais compactas e orientações específicas para os níveis Rápida, Média e Detalhada.</li>
+<li>Recuperação de falhas transitórias, botão Tentar novamente e proteção contra pedidos duplicados ou respostas antigas.</li>
+<li>Nível, preferências pessoais e velocidade da voz preservados.</li>
+<li>127 testes automatizados aprovados. A comparação com a API real mostrou antecipação do primeiro retorno em parte dos testes, mas ainda houve falha do serviço e variação no tempo total.</li>
+<li>O início audível da voz, a captura física e os fluxos com TalkBack ainda precisam de testes em aparelho Android.</li>
 <li>Correção da divergência entre a prévia frontal espelhada e a imagem enviada à IA, sem substituir palavras na resposta.</li>
 <li>Velocidade da voz salva, com cinco opções, amostra e controle para parar.</li>
 <li>Revisão de acessibilidade e prioridade do leitor de tela também no fluxo Bluetooth.</li>
-<li>107 testes automatizados aprovados, incluindo oito configurações sintéticas de câmera e rotação.</li>
 <li>Três níveis de descrição: Detalhada, Média e Rápida.</li>
 <li>Preferências da IA opcionais, salvas e editáveis no aplicativo.</li>
 <li>Prioridades pessoais combinadas com o nível em descrições e perguntas.</li>
