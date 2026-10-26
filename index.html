@@ -268,7 +268,7 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 <p class="app-lead">Descreva cenas com IA, ouça respostas e leia textos e cores sem internet.</p>
 <p>O Ver+ transforma informações visuais em palavras e áudio. Desenvolvido para apoiar pessoas cegas ou com baixa visão, reúne descrição de cenas com inteligência artificial, perguntas sobre imagens e leitura de textos em uma interface em português.</p>
 <p>Use a câmera do celular ou tablet, escolha uma ação e acompanhe o resultado por voz ou na tela.</p>
-<div class="app-badges" aria-label="Informações do aplicativo"><span>Versão 1.0.2 · MVP</span><span>Android 9 ou superior</span><span>Interface em português</span></div>
+<div class="app-badges" aria-label="Informações do aplicativo"><span>Versão 1.0.3 · MVP</span><span>Android 9 ou superior</span><span>Interface em português</span></div>
 </header>
 <details open>
 <summary>Descrição de cenas com IA</summary>
@@ -304,10 +304,14 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 <li>Botões identificados e suporte a fontes ampliadas.</li>
 <li>Resultados disponíveis em texto e áudio.</li>
 <li>Escolha entre as vozes compatíveis instaladas no Android.</li>
+<li>Em <strong>Voz e velocidade</strong>, escolha 0,75×, 1×, 1,25×, 1,5× ou 2×. O padrão é 1×, com preferência salva para as próximas falas do Ver+.</li>
+<li>Ouça uma amostra, pare a reprodução e ajuste a velocidade sem mudar o conteúdo ou o nível da descrição.</li>
+<li>Com um leitor de tela ativo, os resultados ficam a cargo dele para evitar uma segunda narração automática. A velocidade do TalkBack é ajustada nas configurações do próprio leitor.</li>
 <li>Controles para repetir e parar a narração.</li>
 <li>Layout adaptado para celulares e tablets, na vertical e na horizontal.</li>
 </ul>
 <p>Para ouvir sem internet, é necessário ter uma voz em português instalada no aparelho.</p>
+<p>Foram revisados rótulos, estados dos controles, mensagens de retorno e pedidos de retorno do foco nos diálogos. Os testes práticos com TalkBack em aparelho Android ainda estão pendentes; o aplicativo não está declarado como completamente validado em acessibilidade.</p>
 </div>
 </details>
 <details>
@@ -316,6 +320,8 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 <ul>
 <li>Uso das câmeras disponíveis no celular ou tablet.</li>
 <li>Alternância entre câmeras compatíveis.</li>
+<li>Prévia frontal alinhada à imagem analisada, sem o efeito de espelho. Esquerda e direita são orientadas pela perspectiva do observador olhando na direção da câmera.</li>
+<li>Botão identificado para focar no centro da imagem.</li>
 <li>Acesso a câmeras externas reconhecidas pelo Android, conforme a compatibilidade do aparelho e do acessório.</li>
 <li>Integração experimental com o protótipo de câmera Ver+ por Bluetooth, incluindo captura de imagens, leitura de texto e descrição de cenas.</li>
 </ul>
@@ -337,13 +343,18 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 </div>
 </details>
 <details>
-<summary>Novidades da versão 1.0.2</summary>
+<summary>Novidades da versão 1.0.3</summary>
 <div class="app-copy">
 <ul>
+<li>Correção da divergência entre a prévia frontal espelhada e a imagem enviada à IA, sem substituir palavras na resposta.</li>
+<li>Velocidade da voz salva, com cinco opções, amostra e controle para parar.</li>
+<li>Revisão de acessibilidade e prioridade do leitor de tela também no fluxo Bluetooth.</li>
+<li>107 testes automatizados aprovados, incluindo oito configurações sintéticas de câmera e rotação.</li>
 <li>Três níveis de descrição: Detalhada, Média e Rápida.</li>
 <li>Preferências da IA opcionais, salvas e editáveis no aplicativo.</li>
 <li>Prioridades pessoais combinadas com o nível em descrições e perguntas.</li>
-<li>Câmeras do celular e do protótipo Ver+, leitura de texto, cores, voz e acessibilidade mantidas.</li>
+<li>Câmeras do celular e do protótipo Ver+, leitura de texto, cores, voz e recursos existentes mantidos.</li>
+<li>Validação prática com TalkBack, câmeras físicas e respostas espaciais da IA em cenas reais ainda pendente.</li>
 </ul>
 </div>
 </details>
@@ -661,4 +672,5 @@ html[data-theme=dark] .analytics-choice{background:#18231f;color:#dff7ec;border-
 </script>
 </body>
 </html>
+
 
