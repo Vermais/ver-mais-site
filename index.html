@@ -27,8 +27,6 @@ addEventListener('pageshow',resetToTop);
 <script src="script.js?v=20260922-2" defer>
 </script>
 <style id="app-description-styles">
-.notebook-download{margin-top:16px;border:1px solid #dff7ec66;background:#123b32;font-size:1.5rem}
-.notebook-download:focus-visible{outline:3px solid #ffcf33;outline-offset:4px}
 
 .app-description{margin-top:48px;max-width:980px}
 .app-description .app-intro{max-width:760px;margin-bottom:30px}
@@ -251,7 +249,7 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 <div>
 <p class="kicker">Experimente o Ver+</p>
 <h2>A tecnologia começa com um toque.</h2>
-<p>Baixe gratuitamente o Ver+ 1.0.1. Texto e cores funcionam sem internet; descrições de cenas exigem internet e uma chave pessoal de IA configurada no app. O botão acompanha os novos lançamentos.</p>
+<p>Baixe gratuitamente o Ver+ para Android. Texto e cores funcionam sem internet; descrições de cenas exigem internet e uma chave pessoal de IA configurada no app. O botão acompanha os novos lançamentos.</p>
 <p id="meta" class="meta" aria-live="polite">● Buscando a versão mais recente…</p>
 </div>
 <div>
@@ -261,9 +259,6 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 </span>
 </a>
 <small>Arquivo APK • Android 9 ou superior</small>
-<a id="notebookDownload" class="downloadbtn notebook-download" href="https://github.com/Vermais/ver-mais-site/releases/download/v1.0.1/ver-mais-camera-notebook-windows.zip">↔ <span><small>Para usar a webcam do notebook</small><b>Baixar programa para Windows</b></span></a>
-<small>Windows 10/11 de 64 bits • Extraia o ZIP inteiro</small>
-
 </div>
 </div>
 <article class="wrap app-description" id="app-detalhes" aria-labelledby="app-description-title">
@@ -273,14 +268,14 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 <p class="app-lead">Descreva cenas com IA, ouça respostas e leia textos e cores sem internet.</p>
 <p>O Ver+ transforma informações visuais em palavras e áudio. Desenvolvido para apoiar pessoas cegas ou com baixa visão, reúne descrição de cenas com inteligência artificial, perguntas sobre imagens e leitura de textos em uma interface em português.</p>
 <p>Use a câmera do celular ou tablet, escolha uma ação e acompanhe o resultado por voz ou na tela.</p>
-<div class="app-badges" aria-label="Informações do aplicativo"><span>Versão 1.0.1 · MVP</span><span>Android 9 ou superior</span><span>Interface em português</span></div>
+<div class="app-badges" aria-label="Informações do aplicativo"><span>Versão 1.0.2 · MVP</span><span>Android 9 ou superior</span><span>Interface em português</span></div>
 </header>
 <details open>
 <summary>Descrição de cenas com IA</summary>
 <div class="app-copy">
 <ul>
 <li>Conheça elementos visíveis na imagem, como objetos, pessoas e características do ambiente.</li>
-<li>Escolha entre descrições rápidas ou detalhadas.</li>
+<li>Escolha o nível de descrição: Detalhada, Média ou Rápida. O nível define a profundidade e a seleção de informações, além do tamanho da resposta.</li>
 <li>Faça perguntas por voz ou digitando, como “O que está sobre a mesa?”.</li>
 <li>Ative a descrição automática, com novas análises em intervalos de 30 segundos enquanto a tela de câmera estiver em uso.</li>
 <li>Repita a última descrição ou interrompa a análise e a narração quando precisar.</li>
@@ -323,23 +318,16 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 <li>Alternância entre câmeras compatíveis.</li>
 <li>Acesso a câmeras externas reconhecidas pelo Android, conforme a compatibilidade do aparelho e do acessório.</li>
 <li>Integração experimental com o protótipo de câmera Ver+ por Bluetooth, incluindo captura de imagens, leitura de texto e descrição de cenas.</li>
-<li>Uso da webcam do notebook Windows por Bluetooth clássico, com o programa Ver+ Câmera do Notebook, pareamento e código de conexão.</li>
 </ul>
 </div>
 </details>
 <details>
-<summary>Câmera do notebook por Bluetooth</summary>
+<summary>Preferências da IA</summary>
 <div class="app-copy">
-<p>Compartilhe fotos da webcam de um notebook Windows com o app Ver+ no celular ou tablet. Cada captura pode ser usada para leitura de texto sem internet ou descrição de cena com IA. A voz é reproduzida pelo celular ou tablet.</p>
-<ol>
-<li>Baixe o programa para Windows acima, extraia o ZIP inteiro e abra <strong>Ver+ Camera do Notebook.exe</strong>, mantendo a pasta <strong>_internal</strong> junto do executável.</li>
-<li>Pareie o notebook com o celular ou tablet nos ajustes Bluetooth dos dois aparelhos.</li>
-<li>No programa Windows, escolha a webcam e clique em <strong>Iniciar compartilhamento</strong>.</li>
-<li>No app atualizado, escolha <strong>Usar câmera do notebook · Bluetooth</strong>, toque em <strong>Conectar</strong>, selecione o notebook e digite o código de 16 caracteres mostrado na janela do programa.</li>
-<li>Mantenha as duas telas abertas e use <strong>Ler texto</strong> ou <strong>Descrever cena</strong>. Pare o compartilhamento ou feche a janela quando terminar.</li>
-</ol>
-<p>Requer Windows 10/11 de 64 bits, webcam e adaptador com Bluetooth clássico. Não precisa instalar Python. Só parear não transmite imagens: o programa precisa estar iniciado. São fotos sob demanda, não vídeo contínuo. O código muda quando o compartilhamento reinicia.</p>
-<p>Foram testados webcam em 1280×720, abertura e anúncio do serviço Bluetooth no notebook e os testes de protocolo. A conexão completa com o tablet ainda precisa ser validada após instalar o novo APK.</p>
+<p>Conte o que é mais importante para você, o que precisa que a IA priorize e como gostaria de receber as descrições.</p>
+<p>A configuração inicial é opcional. No aplicativo, abra <strong>Preferências da IA</strong> para escolher o nível e informar suas prioridades em texto livre: o que identificar primeiro, quais informações são essenciais, quais detalhes receber com menos frequência e como a IA deve se comunicar.</p>
+<p>As escolhas ficam salvas no aparelho e são aplicadas às próximas descrições e perguntas, inclusive no modo automático. Você pode editar ou apagar o texto quando quiser. Por exemplo, ao priorizar obstáculos com o nível Rápida, a IA recebe a orientação de destacá-los de forma breve. A personalização não deve inventar informações nem omitir alertas críticos de segurança.</p>
+<p>As preferências são enviadas ao serviço de IA junto com cada pedido online. A leitura de textos e cores sem internet mantém seu funcionamento.</p>
 </div>
 </details>
 <details>
@@ -349,17 +337,13 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 </div>
 </details>
 <details>
-<summary>Novidades da versão 1.0.1</summary>
+<summary>Novidades da versão 1.0.2</summary>
 <div class="app-copy">
 <ul>
-<li>Correção da tela inicial em tablets na vertical.</li>
-<li>Melhor encaixe da logo nas telas do aplicativo.</li>
-<li>Acesso à câmera do celular em destaque na tela inicial.</li>
-<li>Ajustes de espaçamento para tablets.</li>
-<li>Ícone da gaveta corrigido, com suporte aos ícones temáticos do Android.</li>
-<li>Logo original restaurada, preservando os traços da marca sem redesenho.</li>
-<li>Nova opção de câmera do notebook por Bluetooth e programa auxiliar para Windows.</li>
-<li>Correções do ícone aplicadas mantendo a mesma versão 1.0.1.</li>
+<li>Três níveis de descrição: Detalhada, Média e Rápida.</li>
+<li>Preferências da IA opcionais, salvas e editáveis no aplicativo.</li>
+<li>Prioridades pessoais combinadas com o nível em descrições e perguntas.</li>
+<li>Câmeras do celular e do protótipo Ver+, leitura de texto, cores, voz e acessibilidade mantidas.</li>
 </ul>
 </div>
 </details>
