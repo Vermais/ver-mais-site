@@ -1,0 +1,26 @@
+name: Publish Android 1.0.4 test APK
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/release-104/**'
+      - '.github/workflows/publish-android-104.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publish-android-104
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Reconstruct, verify and publish the signed test APK
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 .github/release-104/publish.py
+
