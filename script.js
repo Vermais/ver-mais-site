@@ -119,6 +119,10 @@
   var downloadLabel = document.getElementById('downloadLabel');
   var version = document.getElementById('version');
   var meta = document.getElementById('meta');
+  // Keep the verified current APK available if the optional API lookup fails.
+  var fallbackDownloadUrl = downloadButton.href;
+  var fallbackVersion = version.textContent;
+  var fallbackMeta = meta.textContent;
   downloadButton.addEventListener('click', function (event) {
     if (downloadButton.getAttribute('aria-disabled') === 'true') event.preventDefault();
   });
@@ -138,12 +142,12 @@
         version.textContent = release.name || release.tag_name;
         meta.textContent = '● ' + release.tag_name + ' • ' + (apk.size / 1048576).toFixed(0) + ' MB';
       }).catch(function (error) {
-        downloadButton.href = 'https://github.com/Vermais/ver-mais-site/releases';
+        downloadButton.href = fallbackDownloadUrl;
         downloadButton.classList.remove('loading');
         downloadButton.removeAttribute('aria-disabled');
-        downloadLabel.textContent = 'Acompanhar lançamentos';
-        version.textContent = 'Ver versões no GitHub';
-        meta.textContent = '● ' + error.message;
+        downloadLabel.textContent = 'Baixar para Android';
+        version.textContent = fallbackVersion;
+        meta.textContent = fallbackMeta;
       });
   }
   if ('IntersectionObserver' in window) {
