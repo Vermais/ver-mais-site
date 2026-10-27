@@ -24,7 +24,7 @@ addEventListener('load',resetToTop,{once:true});
 addEventListener('pageshow',resetToTop);
 </script>
 <link rel="stylesheet" href="style.css?v=20261008-1">
-<script src="script.js?v=20261026-105" defer>
+<script src="script.js?v=20261027-106" defer>
 </script>
 <style id="app-description-styles">
 
@@ -250,13 +250,13 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 <p class="kicker">Experimente o Ver+</p>
 <h2>A tecnologia começa com um toque.</h2>
 <p>Baixe gratuitamente o Ver+ para Android. Texto e cores funcionam sem internet; descrições de cenas exigem internet e uma chave pessoal de IA configurada no app. O botão acompanha os novos lançamentos.</p>
-<p id="meta" class="meta" aria-live="polite">● v1.0.5 • Versão de teste • 49 MB</p>
-<p>Esta versão corrige reenvios de solicitações de IA e amplia os registros de diagnóstico. A demora e as falhas ainda podem ocorrer; a validação prática de câmera, voz e TalkBack em Android continua pendente.</p>
+<p id="meta" class="meta" aria-live="polite">● v1.0.6 • Versão de teste • 49 MB</p>
+<p>Esta versão traz descrições mais curtas e naturais, com menos repetições e avisos de espera. Os níveis e as preferências são mantidos. A rapidez da IA pode variar, e a validação prática de câmera, voz e TalkBack em Android continua pendente.</p>
 </div>
 <div>
-<a id="downloadBtn" class="downloadbtn" data-release-tag="v1.0.5" href="https://github.com/Vermais/ver-mais-site/releases/download/v1.0.5/ver-mais-v1.0.5-teste.apk">↓ <span>
+<a id="downloadBtn" class="downloadbtn" data-release-tag="v1.0.6" href="https://github.com/Vermais/ver-mais-site/releases/download/v1.0.6/ver-mais-v1.0.6-teste.apk">↓ <span>
 <small id="downloadLabel">Baixar versão de teste para Android</small>
-<b id="version">Ver+ 1.0.5 — Descrições e diagnóstico</b>
+<b id="version">Ver+ 1.0.6 — Descrições mais objetivas</b>
 </span>
 </a>
 <small>Arquivo APK • Android 9 ou superior</small>
@@ -269,7 +269,7 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 <p class="app-lead">Descreva cenas com IA, ouça respostas e leia textos e cores sem internet.</p>
 <p>O Ver+ transforma informações visuais em palavras e áudio. Desenvolvido para apoiar pessoas cegas ou com baixa visão, reúne descrição de cenas com inteligência artificial, perguntas sobre imagens e leitura de textos em uma interface em português.</p>
 <p>Use a câmera do celular ou tablet, escolha uma ação e acompanhe o resultado por voz ou na tela.</p>
-<div class="app-badges" aria-label="Informações do aplicativo"><span>Versão 1.0.5 · MVP em teste</span><span>Android 9 ou superior</span><span>Interface em português</span></div>
+<div class="app-badges" aria-label="Informações do aplicativo"><span>Versão 1.0.6 · MVP em teste</span><span>Android 9 ou superior</span><span>Interface em português</span></div>
 </header>
 <details open>
 <summary>Descrição de cenas com IA</summary>
@@ -343,21 +343,21 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 <summary>Configuração da inteligência artificial</summary>
 <div class="app-copy">
 <p>O aplicativo oferece uma área para configurar e testar o serviço de IA. Na edição pública, as descrições de cenas e respostas sobre imagens exigem internet e uma chave pessoal de acesso ao serviço.</p><p>Texto e cores continuam disponíveis no modo sem internet.</p>
-<p><strong>Consumo da API:</strong> a versão 1.0.5 ainda não oferece uma tela de consumo no aplicativo. Quando o serviço informa, os tokens ficam apenas nos registros de diagnóstico. Saldo, cotas restantes e custos não são exibidos no app.</p>
+<p><strong>Consumo da API:</strong> a versão 1.0.6 ainda não oferece uma tela de consumo no aplicativo. Quando o serviço informa, os tokens ficam apenas nos registros de diagnóstico. Saldo, cotas restantes e custos não são exibidos no app.</p>
 </div>
 </details>
 <details>
-<summary>Novidades da versão 1.0.5 — em teste</summary>
+<summary>Novidades da versão 1.0.6 — em teste</summary>
 <div class="app-copy">
 <ul>
-<li>Correção de reenvios ocultos de solicitações, com controle das tentativas após falhas.</li>
-<li>Registros de diagnóstico mais completos, incluindo tempos por etapa e tokens quando informados pelo serviço.</li>
-<li>Instruções para concluir as frases dentro dos limites de cada nível, mantendo Rápida, Média e Detalhada.</li>
-<li>Descrição progressiva, preferências pessoais e velocidade da voz mantidas; correção do aviso de erro por voz no fluxo do protótipo.</li>
-<li>138 testes locais aprovados e 60 chamadas reais de comparação. Os tempos melhoraram em parte dos testes, mas ainda houve variação e falhas por prazo; a lentidão não está totalmente resolvida.</li>
-<li>Captura física, início sonoro real e TalkBack ainda precisam de validação em Android. As respostas da IA podem conter imprecisões.</li>
+<li>Descrições mais objetivas, com foco no assunto principal e em sua posição, sem inventário desnecessário do fundo.</li>
+<li>Menos repetições e comentários como falta de expressão facial ou distância exata quando isso não foi perguntado. Incertezas relevantes continuam sendo comunicadas.</li>
+<li>Orientações mais curtas para os três níveis: Rápida, Média e Detalhada. O nível escolhido, as preferências pessoais e a velocidade da voz permanecem salvos.</li>
+<li>Confirmação de processamento mais breve, sem outra fala automática repetindo o aviso de espera.</li>
+<li>145 testes locais aprovados e 24 chamadas reais de comparação. Os textos ficaram menores nas cenas testadas; o tempo da API ainda pode variar.</li>
+<li>Captura física, som real e TalkBack ainda precisam de validação em Android. As descrições podem conter imprecisões.</li>
 </ul>
-<p><a href="https://github.com/Vermais/ver-mais-site/blob/main/.github/release-105/DESEMPENHO_E_VALIDACAO.md">Leia o relatório de desempenho, testes e limitações da versão 1.0.5.</a></p>
+<p><a href="https://github.com/Vermais/ver-mais-site/blob/main/.github/release-106/DESEMPENHO_E_VALIDACAO.md">Leia a comparação com as versões anteriores e as limitações da versão 1.0.6.</a></p>
 </div>
 </details>
 <details>
