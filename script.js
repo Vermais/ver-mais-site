@@ -153,7 +153,7 @@
         downloadButton.removeAttribute('aria-disabled');
         downloadLabel.textContent = release.prerelease ? 'Baixar versão de teste para Android' : 'Baixar para Android';
         version.textContent = release.name || release.tag_name;
-        meta.textContent = '● ' + release.tag_name + ' • ' + (apk.size / 1048576).toFixed(0) + ' MB';
+        meta.textContent = '● ' + release.tag_name + ' • ' + (apk.size / 1000000).toFixed(1).replace('.', ',') + ' MB';
       }).catch(function (error) {
         downloadButton.href = fallbackDownloadUrl;
         downloadButton.classList.remove('loading');
