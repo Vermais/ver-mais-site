@@ -1,0 +1,25 @@
+name: Publish Android 1.1.1 test APK
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/release-111/**'
+      - '.github/workflows/publish-android-111.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publish-android-111
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify and publish the signed test APK
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 .github/release-111/publish.py
