@@ -1,0 +1,24 @@
+name: Publish Android 1.2.0 Guia test APK
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/publish-android-120.yml'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publish-android-120
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify and publish the signed Guia test APK
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 .github/release-120/publish.py
