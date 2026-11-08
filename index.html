@@ -250,13 +250,13 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 <p class="kicker">Experimente o Ver+</p>
 <h2>A tecnologia começa com um toque.</h2>
 <p>Baixe gratuitamente o Ver+ para Android. Texto e cores funcionam sem internet; descrições de cenas exigem internet e uma chave pessoal de IA configurada no app. O botão acompanha os novos lançamentos.</p>
-<p id="meta" class="meta" aria-live="polite">● v1.1.2 • Versão de teste • 33,9 MB</p>
-<p>A versão 1.1.2 mostra o progresso do recebimento de fotos por Bluetooth e informa em que etapa a captura falhou. O celular analisa a foto recebida com IA e apresenta a resposta em texto e voz.</p>
+<p id="meta" class="meta" aria-live="polite">● v1.2.0 • Versão de teste • 34,0 MB</p>
+<p>A versão 1.2.0 inclui o assistente Guia: abra câmeras, peça descrições e faça perguntas por voz. Toque em Ligar Guia e diga “Ei, Guia, abra a câmera ESP”. A chamada automática exige Android 12 ou superior com reconhecimento local em português disponível e funciona com o aplicativo aberto. Nos demais aparelhos, use o botão Falar.</p>
 </div>
 <div>
-<a id="downloadBtn" class="downloadbtn" data-release-tag="v1.1.2" href="https://github.com/Vermais/ver-mais-site/releases/download/v1.1.2/ver-mais-v1.1.2-teste.apk">↓ <span>
+<a id="downloadBtn" class="downloadbtn" data-release-tag="v1.2.0" href="https://github.com/Vermais/ver-mais-site/releases/download/v1.2.0/ver-mais-v1.2.0-guia-teste.apk">↓ <span>
 <small id="downloadLabel">Baixar versão de teste para Android</small>
-<b id="version">Ver+ 1.1.2 — Progresso da captura Bluetooth</b>
+<b id="version">Ver+ 1.2.0 — Assistente Guia</b>
 </span>
 </a>
 <small>Arquivo APK • Android 9 ou superior</small>
@@ -269,7 +269,7 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 <p class="app-lead">Descreva cenas com IA, ouça respostas e leia textos e cores sem internet.</p>
 <p>O Ver+ transforma informações visuais em palavras e áudio. Desenvolvido para apoiar pessoas cegas ou com baixa visão, reúne descrição de cenas com inteligência artificial, perguntas sobre imagens e leitura de textos em uma interface em português.</p>
 <p>Use a câmera do celular ou tablet, escolha uma ação e acompanhe o resultado por voz ou na tela.</p>
-<div class="app-badges" aria-label="Informações do aplicativo"><span>Versão 1.1.2 · MVP em teste</span><span>Android 9 ou superior</span><span>Interface em português</span></div>
+<div class="app-badges" aria-label="Informações do aplicativo"><span>Versão 1.2.0 · MVP em teste</span><span>Android 9 ou superior</span><span>Interface em português</span></div>
 </header>
 <details open>
 <summary>Descrição de cenas com IA</summary>
@@ -278,7 +278,7 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 <li>Conheça elementos visíveis na imagem, como objetos, pessoas e características do ambiente.</li>
 <li>Escolha o nível de descrição: Detalhada, Média ou Rápida. O nível define a profundidade e a seleção de informações, além do tamanho da resposta.</li>
 <li>Escolha o esforço da IA: <strong>Leve</strong> para identificação rápida, <strong>Médio</strong> para contexto do dia a dia e <strong>Alto</strong> para detalhes e comparações. O esforço é independente do tamanho da descrição; o perfil Alto pode demorar e consumir mais.</li>
-<li>Faça perguntas por voz ou digitando no celular, como “Onde estão as chaves?”. Nas telas da ESP, também é possível digitar perguntas sobre uma nova foto.</li>
+<li>Faça perguntas por voz ou digitando no celular, como “Onde estão as chaves?”. Nas telas da ESP, também é possível falar ou digitar perguntas sobre uma nova foto.</li>
 <li>Ative a descrição automática enquanto usa a tela da câmera. No Bluetooth, o celular solicita uma foto ao ativar e tenta novamente a cada 30 segundos, pulando os intervalos em que estiver ocupado.</li>
 <li>Repita a última descrição ou interrompa a análise e a narração quando precisar.</li>
 <li>Acompanhe o andamento e o tempo da análise.</li>
@@ -346,6 +346,21 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 <div class="app-copy">
 <p>O aplicativo oferece uma área para configurar e testar o serviço de IA. Na edição pública, as descrições de cenas e respostas sobre imagens exigem internet e uma chave pessoal de acesso ao serviço.</p><p>Texto e cores continuam disponíveis no modo sem internet.</p>
 <p><strong>Uso da IA:</strong> veja chamadas e tokens informados pelo serviço, incluindo tentativas e cancelamentos, no painel de consumo. A contagem é registrada neste aparelho a partir da versão 1.1.0. Dados ausentes são sinalizados como consumo incompleto. A meta diária é pessoal; os limites informados pelo serviço não representam saldo da conta nem custo em reais.</p>
+</div>
+</details>
+<details>
+<summary>Novidades da versão 1.2.0 — Assistente Guia em teste</summary>
+<div class="app-copy">
+<ul>
+<li>Controle o aplicativo por voz: abra a câmera ESP por Bluetooth, a câmera ESP por Wi-Fi, a câmera do celular e a leitura offline.</li>
+<li>Diga <strong>“Ei, Guia, quero perguntar sobre a imagem”</strong>, aguarde “O que você quer saber sobre a imagem?” e fale sua pergunta.</li>
+<li>Na câmera, peça para descrever a imagem, repetir a resposta, parar a voz ou voltar à tela anterior.</li>
+<li>Ative em <strong>Ligar Guia</strong> e permita o microfone. A chamada automática funciona com o aplicativo aberto, em Android 12 ou superior com serviço de reconhecimento local e português disponível.</li>
+<li>Sem esse suporte, o botão <strong>Falar</strong> aceita os mesmos comandos. O serviço de voz do Android pode exigir internet e enviar o áudio ao provedor, conforme aviso no aplicativo.</li>
+<li>A escuta é liberada ao sair do aplicativo ou desligar o Guia. Esta versão usa sessões locais de reconhecimento; não é um detector dedicado de palavra-chave de baixo consumo.</li>
+<li>APK compilado com a mesma assinatura da versão 1.1.2. Foram aprovados 133 testes locais, com análise estática sem erros. A precisão da chamada, a bateria, o microfone e a ESP ainda precisam de validação no aparelho físico.</li>
+</ul>
+<p><a href="https://github.com/Vermais/ver-mais-site/releases/tag/v1.2.0">Leia as notas e baixe a versão 1.2.0 com o Guia.</a></p>
 </div>
 </details>
 <details>
