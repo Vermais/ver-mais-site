@@ -1,0 +1,43 @@
+name: Unblock Ver+ 1.2.0 Pages publication
+on:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/unblock-pages-120.yml']
+permissions:
+  contents: read
+  actions: write
+jobs:
+  unblock:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+      - name: Cancel only the obsolete Pages run from this publication
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python3 - <<'PY'
+          import os,json,time,urllib.request,urllib.error
+          assert os.environ['GITHUB_REPOSITORY']=='Vermais/ver-mais-site'
+          base='https://api.github.com/repos/Vermais/ver-mais-site/actions/runs/42490661213'
+          headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'}
+          def call(path='',method='GET'):
+              req=urllib.request.Request(base+path,headers=headers,method=method)
+              try:
+                  with urllib.request.urlopen(req,timeout=20) as response:
+                      data=response.read()
+                      return json.loads(data) if data else {}
+              except urllib.error.HTTPError as error:
+                  if method=='POST' and error.code in (409,422): return {}
+                  raise
+          if call()['status']=='completed':
+              print('Obsolete run already finished.')
+          else:
+              call('/cancel','POST')
+              for _ in range(5):
+                  if call()['status']=='completed':break
+                  time.sleep(3)
+              if call()['status']!='completed':
+                  call('/force-cancel','POST')
+                  print('Requested force cancellation of the unresponsive obsolete run.')
+              else: print('Obsolete run cancelled.')
+          PY
