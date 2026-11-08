@@ -88,7 +88,7 @@ def main():
         assert uploaded['size'] == len(data)
         if uploaded.get('digest'):
             assert uploaded['digest'] == expected
-    api('PATCH', endpoint + '/' + str(release['id']), {'draft': False, 'prerelease': True})
+    api('PATCH', endpoint + '/' + str(release['id']), {'draft': False, 'prerelease': True, 'body': (ROOT / 'release-notes.md').read_text(encoding='utf-8')})
     print('Published verified test release:', release['html_url'])
 
 
