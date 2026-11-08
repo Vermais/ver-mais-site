@@ -4,6 +4,8 @@ on:
     branches: [main]
     paths:
       - '.github/workflows/publish-android-120.yml'
+      - '.github/release-120/release-notes.md'
+      - '.github/release-120/publish.py'
   workflow_dispatch:
 permissions:
   contents: write
