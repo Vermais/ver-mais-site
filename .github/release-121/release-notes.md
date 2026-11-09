@@ -33,3 +33,5 @@ Foram acrescentados testes do fluxo completo com detectores e áudio simulados. 
 - JNA 5.18.1: disponibilizado sob Apache License 2.0 ou LGPL 2.1; esta distribuição utiliza a opção Apache — https://github.com/java-native-access/jna
 
 Os avisos e textos de licença acompanham o aplicativo em assets/guia-licenses.
+
+O APK de teste tem 80,4 MB. Seu SHA-256 é `58a233ddb24779002a4cf4991b8768645a6b64a465049ff219d752176182c0d5`.
