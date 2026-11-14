@@ -1,0 +1,26 @@
+name: Publish Android 1.2.7 Figma test APK
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/publish-android-127.yml'
+      - '.github/release-127/release-notes.md'
+      - '.github/release-127/publish.py'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: publish-android-127
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Verify and publish the signed Figma test APK
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 .github/release-127/publish.py
