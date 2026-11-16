@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#061814">
+<meta name="description" content="Acesso à informação visual para participar de conversas, atividades escolares e situações do cotidiano.">
+<title>Tese social do Ver + | Ver +</title>
+<link rel="icon" type="image/svg+xml" href="assets/ver-mais-isologo.svg?v=20260920-5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400..700&family=Manrope:wght@600..800&display=swap" rel="stylesheet">
+<script>
+try { document.documentElement.dataset.theme = localStorage.getItem('vermais-theme') || 'light'; }
+catch (error) { document.documentElement.dataset.theme = 'light'; }
+</script>
+<link rel="stylesheet" href="style.css?v=20261116-social">
+<script src="script.js?v=20261116-social" defer>
+</script>
+</head>
+<body class="editorial-page">
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<nav id="nav" class="editorial-nav" aria-label="Navegação principal">
+<div class="wrap navin">
+<a class="brand" href="./" aria-label="Ver mais, página inicial">
+<img src="assets/ver-mais-isologo.svg?v=20260920-5" alt="" width="602" height="602" decoding="async">
+<b aria-hidden="true">Ver<span>+</span>
+</b>
+</a>
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="Ativar modo escuro" aria-pressed="false" title="Alternar tema">
+<span class="sun" aria-hidden="true">☀</span>
+<span class="moon" aria-hidden="true">☾</span>
+</button>
+<button id="toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+<i aria-hidden="true">
+</i>
+<i aria-hidden="true">
+</i>
+<i aria-hidden="true">
+</i>
+</button>
+<ul id="menu">
+  <li><a href="tese-social.html" class="active" aria-current="page">Tese social</a></li>
+  <li><a href="metodologia.html">Metodologia</a></li>
+  <li><a href="./#funciona">Aplicativo</a></li>
+  <li><a href="./#equipe">Equipe</a></li>
+  <li><a href="./#galeria">Caderno</a></li>
+  <li><a href="./#download" class="pill">Baixar app</a></li>
+</ul>
+</div>
+</nav>
+<main id="conteudo" tabindex="-1">
+<header class="editorial-header">
+<div class="wrap">
+<a href="./">Início</a>
+<h1>Tese social do Ver +</h1>
+<p>Acesso à informação visual para participar de conversas, atividades escolares e situações do cotidiano.</p>
+</div>
+</header>
+<article class="wrap editorial-copy">
+<div class="editorial-index" role="group" aria-label="Nesta tese">
+<a href="#problema-social">Problema social</a>
+<a href="#direitos">Direitos e acessibilidade</a>
+<a href="#proposta">Proposta</a>
+<a href="#convivencia">Autonomia e convivência</a>
+<a href="#avaliacao">Limites e avaliação</a>
+<a href="#consideracoes">Considerações finais</a>
+<a href="#referencias">Referências</a>
+</div>
+<p class="editorial-note">Texto da tese social do projeto. Veja a <a href="metodologia.html">metodologia atual do Ver +</a> e o <a href="./#funciona">funcionamento da versão atual do aplicativo</a>.</p>
+<h2 id="problema-social">Contextualização e problema social</h2>
+<p>Reconhecer um objeto sobre a mesa, ler um aviso impresso ou perceber que alguém levantou a mão durante uma conversa são situações em que parte da informação circula visualmente. Quando essa informação é oferecida apenas nesse formato, uma pessoa cega ou com baixa visão pode precisar solicitar uma descrição ou recorrer a outro recurso para obtê-la. A barreira está na forma como o ambiente comunica a informação e pode afetar tanto a realização de tarefas cotidianas quanto a participação em atividades escolares, profissionais e sociais.</p>
+<p>Os resultados preliminares da amostra do Censo Demográfico 2022 apontaram que aproximadamente 7,9 milhões de pessoas de dois anos ou mais, no Brasil, tinham muita dificuldade permanente para enxergar ou não conseguiam enxergar, mesmo com óculos ou lentes de contato (IBGE, 2025). Esse dado dimensiona a relevância do tema e reúne pessoas com diferentes formas de utilizar a visão e diferentes necessidades de acessibilidade. Por isso, uma ferramenta assistiva precisa oferecer opções de interação e permitir que cada pessoa decida em quais situações o recurso lhe é útil.</p>
+<p>No Ceará, 5,2% dos moradores de dois anos ou mais se enquadravam nesse grau de dificuldade para enxergar, frente a 4,0% no Brasil, segundo os resultados preliminares da amostra do Censo 2022 (IBGE, 2025, tabelas 9 e 10). A diferença de 1,2 ponto percentual dá dimensão local ao problema que motivou o projeto. A mesma pesquisa registrou, entre pessoas de 15 anos ou mais, taxa de analfabetismo de 21,3% no grupo com deficiência e de 5,2% no grupo sem deficiência. Essa diferença de cerca de quatro vezes diz respeito ao conjunto das deficiências e contextualiza a desigualdade educacional. No caso do Ver +, a contribuição proposta para a escola é pontual: oferecer uma forma adicional de acessar avisos, materiais impressos e informações visuais durante uma atividade (IBGE, 2025, seção sobre alfabetização).</p>
+<p>A Lei Brasileira de Inclusão da Pessoa com Deficiência compreende a deficiência a partir da interação entre os impedimentos da pessoa e as barreiras que podem restringir sua participação na sociedade. A mesma lei define a tecnologia assistiva em função de sua contribuição à autonomia e à participação (Brasil, 2015, arts. 2º e 3º). A Organização Mundial da Saúde também associa esses recursos à inclusão e à participação em atividades cotidianas (OMS, 2024). Nessa perspectiva, o problema enfrentado pelo Ver + é a dificuldade de acessar, no momento em que são necessárias, informações que o ambiente apresenta predominantemente de forma visual.</p>
+<h2 id="direitos">Direitos e iniciativas de acessibilidade</h2>
+<p>A Convenção Internacional sobre os Direitos das Pessoas com Deficiência, promulgada no Brasil pelo Decreto nº 6.949/2009, trata da acessibilidade à informação e à comunicação no artigo 9 e do acesso à informação em formatos acessíveis no artigo 21. Na legislação brasileira, o artigo 74 da Lei nº 13.146/2015 garante o acesso a recursos e serviços de tecnologia assistiva voltados à autonomia, à mobilidade pessoal e à qualidade de vida. O Plano Nacional dos Direitos da Pessoa com Deficiência, instituído pelo Decreto nº 11.793/2023 e denominado Novo Viver sem Limite, tem a acessibilidade e a tecnologia assistiva como um de seus eixos. Esses marcos ajudam a situar o Ver + como uma contribuição escolar para ampliar as formas de acesso à informação (Brasil, 2009, 2015, 2023).</p>
+<p>O Ministério da Saúde utiliza o Dia Nacional da Pessoa com Deficiência Visual, em 13 de dezembro, para chamar atenção para o enfrentamento do preconceito e para a garantia de direitos e acessibilidade. No Ceará, o edital Ocupa MIS Multilinguagem 2025, do Museu da Imagem e do Som, incluiu audiodescrição e braille entre as medidas de acessibilidade que os proponentes podiam apresentar. O formulário também perguntou se a consultoria em acessibilidade seria realizada por pessoas com deficiência. Essa iniciativa oferece uma referência concreta para o projeto: incluir as pessoas que usarão o recurso nas decisões sobre como a informação deve ser apresentada (Ministério da Saúde, s.d.; Ceará, 2025).</p>
+<h2 id="proposta">Proposta e funcionamento do Ver +</h2>
+<p>O Ver + é um projeto de tecnologia assistiva voltado principalmente a pessoas cegas e com baixa visão. Seu objetivo é ampliar o acesso a informações do ambiente por meio de descrições faladas. O protótipo utiliza um aplicativo Android que recebe imagens da câmera do celular ou de uma câmera externa ESP32-CAM em integração experimental. No modo online, um modelo de inteligência artificial analisa a imagem e gera uma descrição em texto. O aplicativo converte essa descrição em fala, permitindo que o usuário a escute. O projeto também inclui recursos locais para tarefas específicas, como a leitura de texto capturado pela câmera.</p>
+<p>O assistente de voz Guia permite solicitar uma descrição, fazer perguntas sobre a imagem ou pedir que a resposta seja repetida. Em aparelhos compatíveis e com o recurso ativado, a interação pode começar com a chamada “Ei, Guia”. Esse formato permite que a pessoa direcione a análise para aquilo que deseja saber. Diante de uma mesa, por exemplo, a pergunta “Onde estão as chaves?” orienta o sistema a procurar um elemento específico da cena. A navegação por leitor de tela, como o TalkBack, é parte do objetivo de acessibilidade do aplicativo, pois a pessoa também precisa conseguir iniciar uma captura, ajustar opções e entender avisos de erro com autonomia.</p>
+<h2 id="convivencia">Benefícios esperados para a autonomia e a convivência</h2>
+<p>Na vida cotidiana, a descrição falada pode apoiar tarefas como localizar objetos de uso pessoal, identificar itens sobre uma bancada ou acessar um aviso impresso. Em uma sala de aula, a leitura de um trecho capturado pela câmera pode ajudar um estudante a consultar um material no momento da atividade. Em uma reunião, a descrição de um gesto visível, como uma mão levantada, pode oferecer uma pista adicional para acompanhar a conversa. São situações em que o acesso à informação no momento adequado pode reduzir a necessidade de solicitar ajuda a cada ocorrência e permitir que a pessoa escolha como agir.</p>
+<p>A contribuição para a convivência está também na possibilidade de obter informações com discrição. Uma pessoa pode preferir ouvir no fone o conteúdo de uma etiqueta ou perguntar ao aplicativo o que aparece à sua frente. Em uma interação social, a descrição pode indicar ações observáveis, como alguém apontando para um objeto. A intenção desse gesto depende do contexto da conversa e cabe à pessoa interpretá-la. Assim, a utilidade do recurso está em ampliar o acesso a pistas visuais sem transferir para o sistema decisões que pertencem ao usuário.</p>
+<p>Para a comunidade escolar, o desenvolvimento do Ver + também aproxima a formação técnica de um problema de interesse público. Projetar uma interface utilizável por leitor de tela, oferecer alternativas ao toque e explicar falhas por áudio são decisões que influenciam quem consegue usar um produto. O aplicativo complementa recursos como bengala, cão-guia, sinalização tátil e materiais acessíveis. A oferta de informações em formatos acessíveis continua sendo responsabilidade dos espaços, serviços e instituições que as produzem.</p>
+<h2 id="avaliacao">Limites e avaliação do impacto</h2>
+<p>Em escala mundial, um relatório da OMS e do UNICEF estimou que mais de 2,5 bilhões de pessoas precisavam de pelo menos um produto de tecnologia assistiva e que quase 1 bilhão não tinha acesso aos produtos de que precisava. A estimativa reúne diferentes necessidades e tipos de recurso. Para o Ver +, ela reforça a importância de avaliar o acesso ao próprio aplicativo, considerando os aparelhos compatíveis e o que pode ser feito com e sem conexão à internet (OMS e UNICEF, 2022).</p>
+<p>A contribuição social do Ver + depende da confiabilidade do protótipo em condições reais de uso. Iluminação insuficiente, enquadramento inadequado e instabilidade da conexão podem afetar a captura ou a resposta. Uma descrição gerada por inteligência artificial pode omitir detalhes ou interpretar um elemento incorretamente. O aplicativo destina-se à consulta de informações sobre a cena. Em atividades como atravessar uma rua, a pessoa deve recorrer aos recursos e técnicas de mobilidade adequados. Nos modos que enviam imagens para análise remota, a interface também precisa explicar quando ocorre esse envio e permitir que a pessoa controle o acionamento da câmera e do microfone.</p>
+<p>A pesquisa VizWiz reuniu cerca de 31 mil perguntas feitas por pessoas cegas sobre fotos que elas próprias capturaram com o celular. Em 28,6% dos casos, pelo menos metade dos avaliadores considerou que a imagem era inadequada ou que ela não continha informação suficiente para responder à pergunta (Gurari et al., 2018). O resultado pertence ao conjunto de imagens do estudo. Para a avaliação do Ver +, ele fundamenta um critério concreto: testar se o aplicativo consegue informar por voz que a cena está escura, fora de foco ou sem o elemento solicitado, de modo que a pessoa possa decidir se fará outra captura.</p>
+<p>Os documentos do projeto registram o desenvolvimento do aplicativo e testes iniciais do protótipo. A autonomia, a facilidade de uso e a participação social são benefícios esperados cuja avaliação requer a participação direta de pessoas cegas e com baixa visão. Uma etapa de avaliação pode propor tarefas escolhidas com os próprios participantes, como ler um aviso ou encontrar um objeto, e registrar a compreensão da resposta, o tempo necessário para concluir a tarefa e os momentos em que foi preciso pedir ajuda. Os relatos dos participantes também podem revelar em que situações a descrição por voz oferece valor e em quais condições ela precisa ser aprimorada.</p>
+<h2 id="consideracoes">Considerações finais</h2>
+<p>O Ver + parte de um problema concreto de acessibilidade: informações importantes para o cotidiano frequentemente são comunicadas apenas de forma visual. Ao permitir que a pessoa solicite e ouça uma descrição do que a câmera capturou, o projeto oferece mais uma forma de acessar essas informações. Seu potencial de inclusão depende de que esse acesso seja confiável, compreensível e controlado pelo próprio usuário. A participação de pessoas cegas e com baixa visão na avaliação do protótipo é necessária para verificar em quais tarefas ele contribui para a autonomia e quais barreiras ainda precisam ser enfrentadas.</p>
+<h2 id="referencias">Referências</h2>
+<p>BRASIL. Decreto nº 11.793, de 23 de novembro de 2023. Institui o Plano Nacional dos Direitos da Pessoa com Deficiência. <a href="https://www2.camara.leg.br/legin/fed/decret/2023/decreto-11793-23-novembro-2023-794985-publicacaooriginal-170179-pe.html">Texto oficial</a>.</p>
+<p>BRASIL. Decreto nº 6.949, de 25 de agosto de 2009. Promulga a Convenção Internacional sobre os Direitos das Pessoas com Deficiência e seu Protocolo Facultativo. <a href="https://www2.camara.leg.br/legin/fed/decret/2009/decreto-6949-25-agosto-2009-590871-norma-pe.html">Publicação da Câmara dos Deputados</a>.</p>
+<p>BRASIL. Lei nº 13.146, de 6 de julho de 2015. Lei Brasileira de Inclusão da Pessoa com Deficiência. Brasília, DF, 2015. <a href="https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2015/lei/l13146.htm">Texto oficial</a>.</p>
+<p>CEARÁ. Secretaria da Cultura. Edital nº 17/2025 Ocupa MIS Multilinguagem. Anexo 11, Ações de acessibilidade. <a href="https://mapacultural.secult.ce.gov.br/files/opportunity/6425/edital-ocupa-mis-2025-anexo11.pdf">Documento</a>.</p>
+<p>EQUIPE VER +. Projeto final da XIV MOCICULT e documentação do assistente Guia e da câmera ESP. Documentação do projeto, 2026.</p>
+<p>GURARI, Danna et al. VizWiz Grand Challenge: Answering Visual Questions From Blind People. Proceedings of the IEEE Conference on Computer Vision and Pattern Recognition, 2018, p. 3608–3617. <a href="https://openaccess.thecvf.com/content_cvpr_2018/html/Gurari_VizWiz_Grand_Challenge_CVPR_2018_paper.html">Artigo científico</a>.</p>
+<p>IBGE. Censo Demográfico 2022. Pessoas com deficiência e pessoas diagnosticadas com transtorno do espectro autista. Resultados preliminares da amostra. Rio de Janeiro, 2025. <a href="https://www.ibge.gov.br/biblioteca/visualizacao/livros/liv102178.pdf">Publicação</a>.</p>
+<p>MINISTÉRIO DA SAÚDE. Dia Nacional da Pessoa com Deficiência Visual. Biblioteca Virtual em Saúde, s.d. <a href="https://bvsms.saude.gov.br/13-12-dia-nacional-da-pessoa-com-deficiencia-visual/">Publicação</a>.</p>
+<p>ORGANIZAÇÃO MUNDIAL DA SAÚDE e UNICEF. Global report on assistive technology. 2022. <a href="https://www.who.int/publications/i/item/9789240049451">Relatório</a>.</p>
+<p>ORGANIZAÇÃO MUNDIAL DA SAÚDE. Assistive technology. 2024. <a href="https://www.who.int/news-room/fact-sheets/detail/assistive-technology">Ficha informativa</a>.</p>
+</article>
+</main>
+<footer>
+<div class="wrap">
+<a class="brand" href="./" aria-label="Ver mais, página inicial">
+<img src="assets/ver-mais-isologo.svg?v=20260920-5" alt="" width="602" height="602" loading="lazy" decoding="async">
+<b aria-hidden="true">Ver<span>+</span>
+</b>
+</a>
+<p>Tecnologia assistiva para acesso à informação.<br>
+<strong>Feito por Gustavo Feitosa</strong>
+</p>
+<p>© <span id="year">2026</span> Ver+ • Pereiro, CE</p>
+</div>
+</footer>
+<style id="analytics-privacy-styles">
+.privacy-info{padding:0 24px 28px;max-width:900px;margin:auto;font-size:.9rem}
+.privacy-info summary{cursor:pointer;font-weight:700;padding:12px 0}
+.privacy-info a{color:inherit;text-decoration:underline}
+.privacy-info p{margin:12px 0}
+.analytics-choice{position:fixed;inset:auto 16px 16px;z-index:1000;max-width:740px;margin:auto;padding:20px;border:1px solid #438365;border-radius:16px;background:#fffdfa;color:#123b32;box-shadow:0 8px 32px #0004;font:400 1rem/1.5 'DM Sans',sans-serif;max-height:80vh;overflow:auto}
+.analytics-choice[hidden]{display:none}
+.analytics-choice h2{font-size:1.1rem;margin:0 0 8px}
+.analytics-choice p{margin:0 0 14px}
+.analytics-choice a{color:inherit;text-decoration:underline}
+.analytics-actions{display:flex;gap:12px;flex-wrap:wrap}
+.analytics-actions button,.analytics-settings{font:inherit;padding:10px 16px;min-height:44px;border:1px solid currentColor;border-radius:8px;cursor:pointer;background:transparent;color:inherit}
+.analytics-actions button{flex:1}
+.analytics-actions button:focus-visible,.analytics-settings:focus-visible,.privacy-info summary:focus-visible{outline:3px solid #b28000;outline-offset:3px}
+html[data-theme=dark] .analytics-choice{background:#18231f;color:#dff7ec;border-color:#9acdaf}
+@media(forced-colors:active){.analytics-choice{border:2px solid CanvasText}}
+</style>
+<div class="privacy-info">
+<details id="privacidade">
+<summary>Privacidade e estatísticas de acesso</summary>
+<p>O site Ver+ usa o Google Analytics para medir visitas e visualizações somente quando você permite. O Google recebe dados da página visitada, do navegador, do dispositivo e da origem da visita, podendo estimar a região do acesso. Cookies de estatísticas ajudam a distinguir visitas neste navegador. Não enviamos nomes, e-mails nem parâmetros dos endereços das páginas ao Analytics.</p>
+<p>Você pode recusar ou retirar sua permissão pelo botão abaixo. A escolha fica salva neste navegador por até seis meses. Ao recusar, o site continua funcionando e o código de estatísticas não é carregado. A retirada vale para os próximos acessos e não apaga automaticamente dados já processados.</p>
+<p>O responsável pelo site é o projeto Ver+. Para dúvidas sobre privacidade ou solicitações referentes aos seus dados, escreva para <a href="mailto:vermaismocicult@gmail.com">vermaismocicult@gmail.com</a>. Saiba <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">como o Google usa dados de sites parceiros</a> e consulte a <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidade do Google</a>.</p>
+<button class="analytics-settings" id="analyticsSettings" type="button" hidden>Alterar permissão de estatísticas</button>
+</details>
+</div>
+<section class="analytics-choice" id="analyticsChoice" aria-labelledby="analyticsChoiceTitle" hidden>
+<h2 id="analyticsChoiceTitle">Podemos contar sua visita?</h2>
+<p>Com sua permissão, usamos cookies do Google Analytics para contar visitas e visualizações e melhorar o site Ver+. Você pode recusar e continuar navegando. <a href="#privacidade" id="analyticsPrivacyLink">Saiba mais sobre privacidade</a>.</p>
+<div class="analytics-actions">
+<button id="analyticsAccept" type="button">Permitir estatísticas</button>
+<button id="analyticsReject" type="button">Recusar estatísticas</button>
+</div>
+</section>
+<script id="vermais-analytics">
+(function () {
+  'use strict';
+  var measurementId = 'G-85LB240T6G';
+  var storageKey = 'vermais-analytics-consent';
+  var choiceLifetime = 180 * 24 * 60 * 60 * 1000;
+  var banner = document.getElementById('analyticsChoice');
+  var settings = document.getElementById('analyticsSettings');
+  var started = false;
+  var production = location.hostname === 'vermais.github.io' &&
+    /^\/ver-mais-site(?:\/|$)/.test(location.pathname);
+  if (!production) return;
+
+  function readChoice() {
+    try {
+      var saved = JSON.parse(localStorage.getItem(storageKey));
+      if (saved && saved.expires > Date.now() &&
+          (saved.value === 'granted' || saved.value === 'denied')) return saved.value;
+    } catch (error) { /* Storage may be unavailable; ask again on the next visit. */ }
+    return null;
+  }
+  function saveChoice(value) {
+    try {
+      localStorage.setItem(storageKey, JSON.stringify({ value: value, expires: Date.now() + choiceLifetime }));
+    } catch (error) { /* The choice still applies to this page. */ }
+  }
+  function clearAnalyticsCookies() {
+    document.cookie.split(';').forEach(function (cookie) {
+      var name = cookie.trim().split('=')[0];
+      if (name !== '_ga' && name.indexOf('_ga_') !== 0) return;
+      var expired = name + '=; Max-Age=0; path=/; SameSite=Lax';
+      document.cookie = expired;
+      document.cookie = expired + '; domain=' + location.hostname;
+      document.cookie = expired + '; domain=.' + location.hostname;
+    });
+  }
+  function cleanUrl(value) {
+    try { var url = new URL(value); return url.origin + url.pathname; }
+    catch (error) { return ''; }
+  }
+  function startAnalytics() {
+    if (started) return;
+    started = true;
+    window['ga-disable-' + measurementId] = false;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('consent', 'default', {
+      analytics_storage: 'granted', ad_storage: 'denied',
+      ad_user_data: 'denied', ad_personalization: 'denied'
+    });
+    window.gtag('js', new Date());
+    window.gtag('config', measurementId, {
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false,
+      page_location: location.origin + location.pathname,
+      page_referrer: cleanUrl(document.referrer),
+      cookie_expires: 15552000,
+      cookie_update: false
+    });
+    var tag = document.createElement('script');
+    tag.async = true;
+    tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + measurementId;
+    document.head.appendChild(tag);
+  }
+  function setChoice(value) {
+    saveChoice(value);
+    banner.hidden = true;
+    if (value === 'granted') startAnalytics();
+    else {
+      window['ga-disable-' + measurementId] = true;
+      clearAnalyticsCookies();
+      if (started) location.reload();
+    }
+  }
+  settings.hidden = false;
+  settings.addEventListener('click', function () {
+    banner.hidden = false;
+    document.getElementById('analyticsAccept').focus();
+  });
+  document.getElementById('analyticsAccept').addEventListener('click', function () { setChoice('granted'); });
+  document.getElementById('analyticsReject').addEventListener('click', function () { setChoice('denied'); });
+  document.getElementById('analyticsPrivacyLink').addEventListener('click', function () {
+    document.getElementById('privacidade').open = true;
+    banner.hidden = true;
+    settings.focus();
+  });
+  var choice = readChoice();
+  if (choice === 'granted') startAnalytics();
+  else if (choice === 'denied') clearAnalyticsCookies();
+  else banner.hidden = false;
+}());
+</script>
+</body>
+</html>

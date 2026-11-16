@@ -29,7 +29,8 @@
     }
     function applyTheme() {
       root.dataset.theme = next;
-      localStorage.setItem('vermais-theme', next);
+      try { localStorage.setItem('vermais-theme', next); }
+      catch (error) { /* The theme still applies to this page. */ }
       updateThemeLabel();
     }
     if (!reducedMotion && document.startViewTransition) {
@@ -115,7 +116,10 @@
     });
   }
 
+  document.getElementById('year').textContent = new Date().getFullYear();
+
   var downloadButton = document.getElementById('downloadBtn');
+  if (!downloadButton) return;
   var downloadLabel = document.getElementById('downloadLabel');
   var version = document.getElementById('version');
   var meta = document.getElementById('meta');
@@ -252,5 +256,4 @@
   }, { passive: true });
 
   showRecord(0);
-  document.getElementById('year').textContent = new Date().getFullYear();
 })();

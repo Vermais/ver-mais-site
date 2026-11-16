@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#061814">
+<meta name="description" content="Pesquisa sobre barreiras de acesso à informação, desenvolvimento do protótipo e avaliação em situações do cotidiano.">
+<title>Metodologia do Ver + | Ver +</title>
+<link rel="icon" type="image/svg+xml" href="assets/ver-mais-isologo.svg?v=20260920-5">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400..700&family=Manrope:wght@600..800&display=swap" rel="stylesheet">
+<script>
+try { document.documentElement.dataset.theme = localStorage.getItem('vermais-theme') || 'light'; }
+catch (error) { document.documentElement.dataset.theme = 'light'; }
+</script>
+<link rel="stylesheet" href="style.css?v=20261116-social">
+<script src="script.js?v=20261116-social" defer>
+</script>
+</head>
+<body class="editorial-page">
+<div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+<nav id="nav" class="editorial-nav" aria-label="Navegação principal">
+<div class="wrap navin">
+<a class="brand" href="./" aria-label="Ver mais, página inicial">
+<img src="assets/ver-mais-isologo.svg?v=20260920-5" alt="" width="602" height="602" decoding="async">
+<b aria-hidden="true">Ver<span>+</span>
+</b>
+</a>
+<button class="theme-toggle" id="themeToggle" type="button" aria-label="Ativar modo escuro" aria-pressed="false" title="Alternar tema">
+<span class="sun" aria-hidden="true">☀</span>
+<span class="moon" aria-hidden="true">☾</span>
+</button>
+<button id="toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu">
+<i aria-hidden="true">
+</i>
+<i aria-hidden="true">
+</i>
+<i aria-hidden="true">
+</i>
+</button>
+<ul id="menu">
+  <li><a href="tese-social.html">Tese social</a></li>
+  <li><a href="metodologia.html" class="active" aria-current="page">Metodologia</a></li>
+  <li><a href="./#funciona">Aplicativo</a></li>
+  <li><a href="./#equipe">Equipe</a></li>
+  <li><a href="./#galeria">Caderno</a></li>
+  <li><a href="./#download" class="pill">Baixar app</a></li>
+</ul>
+</div>
+</nav>
+<main id="conteudo" tabindex="-1">
+<header class="editorial-header">
+<div class="wrap">
+<a href="./">Início</a>
+<h1>Metodologia do Ver +</h1>
+<p>Pesquisa sobre barreiras de acesso à informação, desenvolvimento do protótipo e avaliação em situações do cotidiano.</p>
+</div>
+</header>
+<article class="wrap editorial-copy">
+<h2 id="pesquisa">Entender a barreira social</h2>
+<p>A equipe começou investigando locomoção e obstáculos. O portfólio do projeto registra a mudança de foco depois de pesquisas, entrevistas e análise de soluções de acessibilidade. O problema central passou a ser o acesso a informações visuais que fazem diferença na convivência, como gestos, indicações e materiais impressos.</p>
+<p>A <a href="tese-social.html">tese social</a> reúne o contexto e as referências. Ela também orienta a escolha de situações para testar o protótipo, como identificar um gesto durante uma conversa, localizar um objeto ou ouvir um aviso.</p>
+<h2 id="prototipagem">Desenvolver e revisar o protótipo</h2>
+<p>A equipe passou de um conceito com os componentes reunidos em um dispositivo vestível para um protótipo em que o celular concentra a interface, o áudio e a análise. A câmera pode ser a do próprio Android ou uma ESP32-CAM conectada por Bluetooth.</p>
+<p>As revisões do app aproximaram captura e resposta na mesma tela. A pessoa pode usar o cartão <strong>À sua frente</strong>, consultar o resultado em áudio, fazer uma pergunta ou chamar o Guia por voz. A integração com a ESP32 inclui correções de orientação da imagem e uma segunda captura com flash em baixa luz quando o firmware é compatível.</p>
+<h2 id="testes">Testar câmera, áudio e acessibilidade</h2>
+<p>O desenvolvimento inclui testes automatizados e verificações iniciais do protótipo. Nos testes práticos, importa verificar se a captura chega ao app, se a resposta descreve o elemento solicitado e se a pessoa consegue repetir, interromper ou refazer uma captura por toque, leitor de tela ou voz.</p>
+<p>Cenas escuras, imagens mal enquadradas e interrupções do Bluetooth ou da internet ajudam a verificar se a mensagem de erro explica o que aconteceu e permite decidir a próxima ação. <a href="./#galeria">Veja os registros do caderno de campo</a>.</p>
+<h2 id="validacao">Avaliar com pessoas cegas e com baixa visão</h2>
+<p>A avaliação do impacto social é uma etapa a realizar com o público do projeto. A proposta é escolher tarefas com os participantes e observar se a resposta foi compreensível, quanto tempo a tarefa levou e quando foi necessário pedir ajuda.</p>
+<p>Os relatos sobre o que foi útil, quais detalhes fizeram falta e como foi usar o TalkBack ou o Guia ajudam a orientar as próximas revisões. Os resultados dessa etapa permitirão avaliar em quais situações o Ver + contribui para a participação e a autonomia.</p>
+<p class="editorial-links"><a href="./#funciona">Conheça o aplicativo</a> <a href="./#download">Baixe a versão de teste</a></p>
+</article>
+</main>
+<footer>
+<div class="wrap">
+<a class="brand" href="./" aria-label="Ver mais, página inicial">
+<img src="assets/ver-mais-isologo.svg?v=20260920-5" alt="" width="602" height="602" loading="lazy" decoding="async">
+<b aria-hidden="true">Ver<span>+</span>
+</b>
+</a>
+<p>Tecnologia assistiva para acesso à informação.<br>
+<strong>Feito por Gustavo Feitosa</strong>
+</p>
+<p>© <span id="year">2026</span> Ver+ • Pereiro, CE</p>
+</div>
+</footer>
+<style id="analytics-privacy-styles">
+.privacy-info{padding:0 24px 28px;max-width:900px;margin:auto;font-size:.9rem}
+.privacy-info summary{cursor:pointer;font-weight:700;padding:12px 0}
+.privacy-info a{color:inherit;text-decoration:underline}
+.privacy-info p{margin:12px 0}
+.analytics-choice{position:fixed;inset:auto 16px 16px;z-index:1000;max-width:740px;margin:auto;padding:20px;border:1px solid #438365;border-radius:16px;background:#fffdfa;color:#123b32;box-shadow:0 8px 32px #0004;font:400 1rem/1.5 'DM Sans',sans-serif;max-height:80vh;overflow:auto}
+.analytics-choice[hidden]{display:none}
+.analytics-choice h2{font-size:1.1rem;margin:0 0 8px}
+.analytics-choice p{margin:0 0 14px}
+.analytics-choice a{color:inherit;text-decoration:underline}
+.analytics-actions{display:flex;gap:12px;flex-wrap:wrap}
+.analytics-actions button,.analytics-settings{font:inherit;padding:10px 16px;min-height:44px;border:1px solid currentColor;border-radius:8px;cursor:pointer;background:transparent;color:inherit}
+.analytics-actions button{flex:1}
+.analytics-actions button:focus-visible,.analytics-settings:focus-visible,.privacy-info summary:focus-visible{outline:3px solid #b28000;outline-offset:3px}
+html[data-theme=dark] .analytics-choice{background:#18231f;color:#dff7ec;border-color:#9acdaf}
+@media(forced-colors:active){.analytics-choice{border:2px solid CanvasText}}
+</style>
+<div class="privacy-info">
+<details id="privacidade">
+<summary>Privacidade e estatísticas de acesso</summary>
+<p>O site Ver+ usa o Google Analytics para medir visitas e visualizações somente quando você permite. O Google recebe dados da página visitada, do navegador, do dispositivo e da origem da visita, podendo estimar a região do acesso. Cookies de estatísticas ajudam a distinguir visitas neste navegador. Não enviamos nomes, e-mails nem parâmetros dos endereços das páginas ao Analytics.</p>
+<p>Você pode recusar ou retirar sua permissão pelo botão abaixo. A escolha fica salva neste navegador por até seis meses. Ao recusar, o site continua funcionando e o código de estatísticas não é carregado. A retirada vale para os próximos acessos e não apaga automaticamente dados já processados.</p>
+<p>O responsável pelo site é o projeto Ver+. Para dúvidas sobre privacidade ou solicitações referentes aos seus dados, escreva para <a href="mailto:vermaismocicult@gmail.com">vermaismocicult@gmail.com</a>. Saiba <a href="https://policies.google.com/technologies/partner-sites" target="_blank" rel="noopener">como o Google usa dados de sites parceiros</a> e consulte a <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidade do Google</a>.</p>
+<button class="analytics-settings" id="analyticsSettings" type="button" hidden>Alterar permissão de estatísticas</button>
+</details>
+</div>
+<section class="analytics-choice" id="analyticsChoice" aria-labelledby="analyticsChoiceTitle" hidden>
+<h2 id="analyticsChoiceTitle">Podemos contar sua visita?</h2>
+<p>Com sua permissão, usamos cookies do Google Analytics para contar visitas e visualizações e melhorar o site Ver+. Você pode recusar e continuar navegando. <a href="#privacidade" id="analyticsPrivacyLink">Saiba mais sobre privacidade</a>.</p>
+<div class="analytics-actions">
+<button id="analyticsAccept" type="button">Permitir estatísticas</button>
+<button id="analyticsReject" type="button">Recusar estatísticas</button>
+</div>
+</section>
+<script id="vermais-analytics">
+(function () {
+  'use strict';
+  var measurementId = 'G-85LB240T6G';
+  var storageKey = 'vermais-analytics-consent';
+  var choiceLifetime = 180 * 24 * 60 * 60 * 1000;
+  var banner = document.getElementById('analyticsChoice');
+  var settings = document.getElementById('analyticsSettings');
+  var started = false;
+  var production = location.hostname === 'vermais.github.io' &&
+    /^\/ver-mais-site(?:\/|$)/.test(location.pathname);
+  if (!production) return;
+
+  function readChoice() {
+    try {
+      var saved = JSON.parse(localStorage.getItem(storageKey));
+      if (saved && saved.expires > Date.now() &&
+          (saved.value === 'granted' || saved.value === 'denied')) return saved.value;
+    } catch (error) { /* Storage may be unavailable; ask again on the next visit. */ }
+    return null;
+  }
+  function saveChoice(value) {
+    try {
+      localStorage.setItem(storageKey, JSON.stringify({ value: value, expires: Date.now() + choiceLifetime }));
+    } catch (error) { /* The choice still applies to this page. */ }
+  }
+  function clearAnalyticsCookies() {
+    document.cookie.split(';').forEach(function (cookie) {
+      var name = cookie.trim().split('=')[0];
+      if (name !== '_ga' && name.indexOf('_ga_') !== 0) return;
+      var expired = name + '=; Max-Age=0; path=/; SameSite=Lax';
+      document.cookie = expired;
+      document.cookie = expired + '; domain=' + location.hostname;
+      document.cookie = expired + '; domain=.' + location.hostname;
+    });
+  }
+  function cleanUrl(value) {
+    try { var url = new URL(value); return url.origin + url.pathname; }
+    catch (error) { return ''; }
+  }
+  function startAnalytics() {
+    if (started) return;
+    started = true;
+    window['ga-disable-' + measurementId] = false;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function () { window.dataLayer.push(arguments); };
+    window.gtag('consent', 'default', {
+      analytics_storage: 'granted', ad_storage: 'denied',
+      ad_user_data: 'denied', ad_personalization: 'denied'
+    });
+    window.gtag('js', new Date());
+    window.gtag('config', measurementId, {
+      allow_google_signals: false,
+      allow_ad_personalization_signals: false,
+      page_location: location.origin + location.pathname,
+      page_referrer: cleanUrl(document.referrer),
+      cookie_expires: 15552000,
+      cookie_update: false
+    });
+    var tag = document.createElement('script');
+    tag.async = true;
+    tag.src = 'https://www.googletagmanager.com/gtag/js?id=' + measurementId;
+    document.head.appendChild(tag);
+  }
+  function setChoice(value) {
+    saveChoice(value);
+    banner.hidden = true;
+    if (value === 'granted') startAnalytics();
+    else {
+      window['ga-disable-' + measurementId] = true;
+      clearAnalyticsCookies();
+      if (started) location.reload();
+    }
+  }
+  settings.hidden = false;
+  settings.addEventListener('click', function () {
+    banner.hidden = false;
+    document.getElementById('analyticsAccept').focus();
+  });
+  document.getElementById('analyticsAccept').addEventListener('click', function () { setChoice('granted'); });
+  document.getElementById('analyticsReject').addEventListener('click', function () { setChoice('denied'); });
+  document.getElementById('analyticsPrivacyLink').addEventListener('click', function () {
+    document.getElementById('privacidade').open = true;
+    banner.hidden = true;
+    settings.focus();
+  });
+  var choice = readChoice();
+  if (choice === 'granted') startAnalytics();
+  else if (choice === 'denied') clearAnalyticsCookies();
+  else banner.hidden = false;
+}());
+</script>
+</body>
+</html>

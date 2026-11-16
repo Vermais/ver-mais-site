@@ -4,27 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#061814">
-<meta name="description" content="Ver+ transforma o ambiente em descrições por áudio para ampliar a autonomia de pessoas com deficiência visual.">
-<title>Ver+ | Tecnologia para enxergar além</title>
+<meta name="description" content="O Ver + é um projeto cearense de tecnologia assistiva. Seu app Android descreve informações visuais do ambiente em áudio para apoiar a participação de pessoas cegas e com baixa visão.">
+<title>Ver + | Acesso ao contexto visual</title>
 <link rel="icon" type="image/svg+xml" href="assets/ver-mais-isologo.svg?v=20260920-5">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400..700&family=Manrope:wght@600..800&display=swap" rel="stylesheet">
 <script>
-history.scrollRestoration='manual';
-if(location.hash)history.replaceState(null,'',location.pathname+location.search);
-document.documentElement.dataset.theme=localStorage.getItem('vermais-theme')||'light';
-function resetToTop(){
-  document.documentElement.scrollTop=0;
-  if(document.body)document.body.scrollTop=0;
-}
-resetToTop();
-addEventListener('DOMContentLoaded',resetToTop,{once:true});
-addEventListener('load',resetToTop,{once:true});
-addEventListener('pageshow',resetToTop);
+try { document.documentElement.dataset.theme = localStorage.getItem('vermais-theme') || 'light'; }
+catch (error) { document.documentElement.dataset.theme = 'light'; }
 </script>
-<link rel="stylesheet" href="style.css?v=20261008-1">
-<script src="script.js?v=20261106-110" defer>
+<link rel="stylesheet" href="style.css?v=20261116-social">
+<script src="script.js?v=20261116-social" defer>
 </script>
 <style id="app-description-styles">
 
@@ -74,28 +65,16 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 </i>
 </button>
 <ul id="menu">
-<li>
-<a href="#funciona">Como funciona</a>
-</li>
-<li>
-<a href="#dispositivo">Dispositivo</a>
-</li>
-<li>
-<a href="#impacto">Impacto</a>
-</li>
-<li>
-<a href="#equipe">Equipe</a>
-</li>
-<li>
-<a href="#galeria">Caderno</a>
-</li>
-<li>
-<a class="pill" href="#download">Baixar app</a>
-</li>
+  <li><a href="tese-social.html">Tese social</a></li>
+  <li><a href="metodologia.html">Metodologia</a></li>
+  <li><a href="#funciona">Aplicativo</a></li>
+  <li><a href="#equipe">Equipe</a></li>
+  <li><a href="#galeria">Caderno</a></li>
+  <li><a href="#download" class="pill">Baixar app</a></li>
 </ul>
 </div>
 </nav>
-<main id="conteudo">
+<main id="conteudo" tabindex="-1">
 <header id="inicio" class="hero">
 <div class="gridbg">
 </div>
@@ -104,17 +83,11 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 <p class="eyebrow">
 <i>
 </i>Tecnologia assistiva feita no Ceará</p>
-<h1>Ouça o que existe <em>ao seu redor.</em>
-</h1>
-<p class="lead">O Ver+ usa visão computacional para reconhecer pessoas, expressões, objetos e distâncias — e transforma tudo em descrições por áudio, em tempo real.</p>
+<h1>Ouça o que um gesto pode dizer.</h1>
+<p class="lead">Uma mão levantada, alguém apontando para um objeto, um aviso no mural. O Ver + ajuda pessoas cegas e com baixa visão a acessar informações visuais do ambiente por meio de descrições faladas.</p>
 <div class="actions">
-<a class="btn primary" href="#download">↓&nbsp; Baixar para Android</a>
-<a class="btn ghost" href="#funciona">Conhecer o projeto</a>
-</div>
-<div class="trust">
-<span>● Descrição por voz</span>
-<span>● Modo offline</span>
-<span>● Privacidade por padrão</span>
+<a class="btn primary" href="tese-social.html">Ler a tese social</a>
+<a class="btn ghost" href="#funciona">Conhecer o aplicativo</a>
 </div>
 </div>
 <div class="visual reveal">
@@ -123,135 +96,88 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 <div class="logo">
 <img src="assets/ver-mais-imagotipo.svg?v=20260920-2" alt="Logo Ver+" width="1461" height="1461" decoding="async" fetchpriority="high">
 </div>
-<div class="float top">
-<b>◉ Ambiente reconhecido</b>
-<small>Análise em tempo real</small>
-</div>
-<div class="float bottom">
-<b>≋ Descrição em áudio</b>
-<small>Clara e acessível</small>
-</div>
 </div>
 </div>
 </header>
-<section class="stats">
+<section id="impacto" class="section impact">
 <div class="wrap">
-<p>
-<b>3</b>
-<span>modos de operação</span>
-</p>
-<p>
-<b>IA</b>
-<span>multimodal</span>
-</p>
-<p>
-<b>100%</b>
-<span>focado em autonomia</span>
-</p>
-<p>
-<b>LGPD</b>
-<span>imagens não armazenadas</span>
-</p>
+<header class="heading">
+<h2>O que fica de fora quando a informação é só visual?</h2>
+<p>Em uma conversa, alguém pode apontar para um objeto sem dizer qual é. Na escola, um aviso pode existir apenas no mural. O Ver + busca tornar esses detalhes consultáveis por voz, para que cada pessoa possa interpretar a situação e decidir como agir.</p>
+</header>
+<div class="social-examples">
+<article><h3>Na conversa</h3><p>Pergunte se alguém levantou a mão ou para onde uma pessoa está apontando. A descrição se baseia no que aparece na imagem.</p></article>
+<article><h3>Na escola</h3><p>Capture um aviso impresso para ouvir o texto reconhecido durante a atividade.</p></article>
+<article><h3>No cotidiano</h3><p>Pergunte onde estão as chaves na foto da mesa ou consulte a cor aproximada de um objeto.</p></article>
+</div>
+<p class="editorial-links"><a href="tese-social.html">Leia a tese social e suas referências</a> <a href="metodologia.html">Veja como o projeto é desenvolvido e avaliado</a></p>
 </div>
 </section>
 <section id="funciona" class="section">
 <div class="wrap">
-<header class="heading reveal">
-<p class="kicker">Simples por fora, inteligente por dentro</p>
-<h2>Da câmera ao ouvido<br>em poucos segundos.</h2>
-<p>Uma experiência pensada para reduzir etapas e entregar a informação certa no momento certo.</p>
+<header class="heading">
+<p class="kicker">Aplicativo Android</p>
+<h2>Da captura à resposta por voz</h2>
+<p>Escolha o que saber sobre a cena. A descrição aparece na tela da câmera, onde você também pode ouvir novamente ou fazer uma pergunta.</p>
 </header>
-<div class="steps">
-<article class="reveal">
-<span>01</span>
-<i>◎</i>
-<h3>Captura</h3>
-<p>A câmera registra a cena diante do usuário.</p>
-</article>
-<article class="reveal">
-<span>02</span>
-<i>✦</i>
-<h3>Interpretação</h3>
-<p>A inteligência artificial entende pessoas, objetos e contexto.</p>
-</article>
-<article class="reveal">
-<span>03</span>
-<i>≋</i>
-<h3>Narração</h3>
-<p>O resultado é convertido em fala e reproduzido no fone.</p>
-</article>
+<div class="steps app-steps">
+<article><h3>Capture a cena</h3><p>Na tela inicial, escolha a câmera ESP32 por Bluetooth ou a câmera do celular. Faça uma captura ou ative a descrição automática na tela da câmera.</p></article>
+<article><h3>Escolha o que consultar</h3><p>Use o cartão <strong>À sua frente</strong> para ouvir uma descrição ou perguntar sobre a imagem. A IA analisa a captura online. Texto e cores são processados no aparelho.</p></article>
+<article><h3>Ouça e faça outra pergunta</h3><p>O Android lê o resultado em voz alta. Você pode repetir, interromper ou pedir um detalhe sobre a imagem capturada.</p></article>
 </div>
-<div class="showcase reveal">
-<img src="assets/g3.webp" alt="Aplicativo Ver+ reconhecendo uma cena" width="900" height="1200" loading="lazy" decoding="async">
-<div>
-<p class="kicker">Feito para a vida real</p>
-<h2>Escolha o modo ideal para cada situação.</h2>
-<dl>
-<dt>Online</dt>
-<dd>Descrições mais ricas usando IA multimodal.</dd>
-<dt>Híbrido</dt>
-<dd>Equilíbrio entre conectividade e agilidade.</dd>
-<dt>Offline</dt>
-<dd>Recursos essenciais mesmo sem internet.</dd>
-</dl>
+<article class="app-description" id="app-detalhes" aria-labelledby="app-description-title">
+<h2 id="app-description-title">Recursos e configurações</h2>
+<details open>
+<summary>Guia por voz</summary>
+<div class="app-copy">
+<p>Abra <strong>Guia por voz</strong>, toque em <strong>Ativar “Ei, Guia”</strong> e permita o microfone. Com o app aberto, diga <strong>“Ei, Guia”</strong>. A chamada pode interromper a narração. Ao ouvir <strong>“Ouvindo”</strong>, diga, por exemplo, “Abra a câmera ESP”, “Ouvir de novo” ou “Descrição rápida”. Você também pode usar o botão <strong>Falar</strong>.</p>
+<p>A palavra de ativação funciona offline nos aparelhos compatíveis. O reconhecimento dos comandos pode depender do serviço de voz do Android.</p>
 </div>
+</details>
+<details>
+<summary>Descrição com IA, texto e cores</summary>
+<div class="app-copy">
+<p>Descrições e perguntas sobre imagens requerem internet e uma chave pessoal configurada em <strong>Serviços de IA</strong>. O serviço recebe a imagem para análise. Escolha o detalhamento da resposta e o esforço da análise separadamente. As preferências que você adicionar para orientar a descrição acompanham o pedido online.</p>
+<p>A leitura de texto impresso e a identificação da cor aproximada na região central da imagem funcionam no próprio aparelho. Para ouvir offline, use uma voz em português disponível localmente no Android.</p>
 </div>
+</details>
+<details>
+<summary>Consumo e preferências da IA</summary>
+<div class="app-copy">
+<p>Nos ajustes da IA, defina o que a descrição deve priorizar. Nas telas de câmera, use o indicador de consumo para consultar as chamadas, os tokens informados pelo serviço e a meta diária configurada no aparelho.</p>
+</div>
+</details>
+<details>
+<summary>Acessibilidade e limites do protótipo</summary>
+<div class="app-copy">
+<p>O app oferece rótulos para leitor de tela, suporte a fontes ampliadas, respostas em texto e áudio e controles de velocidade da fala nos ajustes da câmera. A compatibilidade com TalkBack ainda passa por validação prática.</p>
+<p>Iluminação, ângulo e enquadramento afetam o resultado. A IA pode errar ou omitir detalhes. Em travessias e outras decisões de segurança, use seus recursos e técnicas habituais de mobilidade.</p>
+</div>
+</details>
+</article>
 </div>
 </section>
 <section id="dispositivo" class="section dark">
 <div class="wrap two">
-<div class="reveal">
-<p class="kicker">Do aplicativo ao vestível</p>
-<h2>Tecnologia que acompanha você.</h2>
-<p class="muted">O conceito físico do Ver+ é um dispositivo retroauricular discreto, conectado ao smartphone e pensado para deixar as mãos livres.</p>
-<ul class="features">
-<li>
-<b>CAM</b>
-<span>
-<strong>Câmera frontal</strong>Captura o campo de visão.</span>
-</li>
-<li>
-<b>AUD</b>
-<span>
-<strong>Áudio integrado</strong>Entrega descrições com privacidade.</span>
-</li>
-<li>
-<b>CON</b>
-<span>
-<strong>Conexão inteligente</strong>Comunica-se com o app no celular.</span>
-</li>
-</ul>
+<div>
+<h2>Câmera ESP32 por Bluetooth</h2>
+<p class="muted">No protótipo, o celular solicita uma foto à ESP32-CAM. A placa envia a imagem por Bluetooth e o app faz a leitura local ou encaminha a captura para análise online, conforme a ação escolhida.</p>
+<p class="muted">Com o firmware R11.2, o app pode pedir outra foto com flash quando a primeira indica baixa luminosidade. Se a imagem continuar escura, confira se a lente está coberta ou se a câmera está apontada para a cena.</p>
+<p><a href="metodologia.html#prototipagem">Conheça a evolução do protótipo</a></p>
 </div>
-<figure class="device reveal">
-<img src="assets/modelo-3d-r6.webp" alt="Modelo 3D R6 do dispositivo retroauricular Ver+" width="1500" height="1250" loading="lazy" decoding="async">
-<figcaption>Conceito R6 desenvolvido e renderizado no Blender</figcaption>
+<figure class="device">
+<img src="assets/modelo-3d-r6.webp" alt="Renderização do conceito retroauricular R6" width="1500" height="1250" loading="lazy" decoding="async">
+<figcaption>Conceito vestível R6, modelado no Blender durante o desenvolvimento.</figcaption>
 </figure>
-</div>
-</section>
-<section id="impacto" class="section impact">
-<div class="wrap two">
-<blockquote class="reveal">“<br>Incluir também é transformar informação visual em experiência acessível.</blockquote>
-<div class="reveal">
-<p class="kicker">Por que o Ver+ existe</p>
-<h2>Mais contexto. Mais confiança. Mais autonomia.</h2>
-<p>Muitas informações sociais e cotidianas ainda existem apenas no campo visual. O Ver+ aproxima a tecnologia assistiva das pessoas de forma discreta e humana.</p>
-<div class="tags">
-<span>Inclusão</span>
-<span>Cidadania</span>
-<span>Convivência</span>
-<span>Independência</span>
-</div>
-</div>
 </div>
 </section>
 <section id="download" class="section">
 <div class="wrap download reveal">
 <div>
-<p class="kicker">Experimente o Ver+</p>
-<h2>A tecnologia começa com um toque.</h2>
-<p>Baixe gratuitamente o Ver+ para Android. Texto e cores funcionam sem internet; descrições de cenas exigem internet e uma chave pessoal de IA configurada no app. O botão acompanha os novos lançamentos.</p>
-<p id="meta" class="meta" aria-live="polite">● v1.2.19 • Versão de teste • 80,6 MB</p>
-<p>Abra <strong>Guia por voz</strong>, toque em <strong>Ativar “Ei, Guia”</strong> e permita o microfone. Com o Ver+ aberto, diga <strong>“Ei, Guia”</strong> para interromper a narração, aguarde <strong>“Ouvindo”</strong> e diga seu comando. A chamada funciona offline no Android 9 ou superior.</p>
+<h2>Baixe o Ver + para Android</h2>
+<p>O APK gratuito é uma versão de teste para Android 9 ou superior. Use a câmera do aparelho para experimentar a leitura local ou configure o serviço de IA para descrições e perguntas sobre imagens.</p>
+<p id="meta" class="meta" aria-live="polite">v1.2.19 · Versão de teste · 80,6 MB</p>
+<p><a href="https://github.com/Vermais/ver-mais-site/releases">Histórico de versões do aplicativo</a></p>
 </div>
 <div>
 <a id="downloadBtn" class="downloadbtn" data-release-tag="v1.2.19" href="https://github.com/Vermais/ver-mais-site/releases/download/v1.2.19/ver-mais-v1.2.19.apk">↓ <span>
@@ -262,224 +188,11 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 <small>Arquivo APK • Android 9 ou superior</small>
 </div>
 </div>
-<article class="wrap app-description" id="app-detalhes" aria-labelledby="app-description-title">
-<header class="app-intro">
-<p class="kicker">Sobre o aplicativo</p>
-<h2 id="app-description-title">Ver+ — O mundo, em palavras</h2>
-<p class="app-lead">Descreva cenas com IA, ouça respostas e leia textos e cores sem internet.</p>
-<p>O Ver+ transforma informações visuais em palavras e áudio. Desenvolvido para apoiar pessoas cegas ou com baixa visão, reúne descrição de cenas com inteligência artificial, perguntas sobre imagens e leitura de textos em uma interface em português.</p>
-<p>Use a câmera do celular ou tablet, escolha uma ação e acompanhe o resultado por voz ou na tela.</p>
-<div class="app-badges" aria-label="Informações do aplicativo"><span>Versão 1.2.19 · MVP em teste</span><span>Android 9 ou superior</span><span>Interface em português</span></div>
-</header>
-<details open>
-<summary>Descrição de cenas com IA</summary>
-<div class="app-copy">
-<ul>
-<li>Conheça elementos visíveis na imagem, como objetos, pessoas e características do ambiente.</li>
-<li>Escolha o nível de descrição: Detalhada, Média ou Rápida. O nível define a profundidade e a seleção de informações, além do tamanho da resposta.</li>
-<li>Escolha o esforço da IA: <strong>Leve</strong> para identificação rápida, <strong>Médio</strong> para contexto do dia a dia e <strong>Alto</strong> para detalhes e comparações. O esforço é independente do tamanho da descrição; o perfil Alto pode demorar e consumir mais.</li>
-<li>Faça perguntas por voz, como “Onde estão as chaves?”. Toque para falar e aguarde o fim da escuta; a resposta aparece na mesma tela.</li>
-<li>Ative a descrição automática enquanto usa a tela da câmera. No Bluetooth, o celular solicita uma foto ao ativar e tenta novamente a cada 30 segundos, pulando os intervalos em que estiver ocupado.</li>
-<li>Repita a última descrição ou interrompa a análise e a narração quando precisar.</li>
-<li>Acompanhe o andamento e o tempo da análise.</li>
-<li>Receba frases completas progressivamente, quando o serviço de IA permitir, sem esperar todo o texto para começar a leitura.</li>
-<li>Se ocorrer uma falha, use <strong>Tentar novamente</strong> para analisar uma nova captura. A descrição automática pausa após erros.</li>
-</ul>
-</div>
-</details>
-<details>
-<summary>Texto e cores sem internet</summary>
-<div class="app-copy">
-<ul>
-<li>Reconheça textos impressos em papéis, embalagens e outras superfícies.</li>
-<li>Ouça o texto reconhecido ou leia o resultado na tela.</li>
-<li>Navegue entre trechos de leituras longas.</li>
-<li>Identifique a cor aproximada da região central da imagem.</li>
-<li>Processe texto e cores diretamente no aparelho, sem enviar essas imagens para análise online.</li>
-</ul>
-<p>Para melhores resultados, mantenha a câmera firme e a cena bem iluminada. A identificação de cores funciona melhor com superfícies lisas ocupando o centro da imagem.</p>
-</div>
-</details>
-<details>
-<summary>Voz e acessibilidade</summary>
-<div class="app-copy">
-<ul>
-<li>Recursos de apoio ao TalkBack, com validação prática em Android ainda pendente.</li>
-<li>Botões identificados e suporte a fontes ampliadas.</li>
-<li>Resultados disponíveis em texto e áudio.</li>
-<li>Escolha entre as vozes compatíveis instaladas no Android.</li>
-<li>Em <strong>Voz e velocidade</strong>, escolha 0,75×, 1×, 1,25×, 1,5× ou 2×. O padrão é 1×, com preferência salva para as próximas falas do Ver+.</li>
-<li>Ouça uma amostra, pare a reprodução e ajuste a velocidade sem mudar o conteúdo ou o nível da descrição.</li>
-<li>Com um leitor de tela ativo, os resultados ficam a cargo dele para evitar uma segunda narração automática. A velocidade do TalkBack é ajustada nas configurações do próprio leitor.</li>
-<li>Controles para repetir e parar a narração.</li>
-<li>Layout adaptado para celulares e tablets, na vertical e na horizontal.</li>
-</ul>
-<p>Para ouvir sem internet, é necessário ter uma voz em português instalada no aparelho.</p>
-<p>Foram revisados rótulos, estados dos controles, mensagens de retorno e pedidos de retorno do foco nos diálogos. Os testes práticos com TalkBack em aparelho Android ainda estão pendentes; o aplicativo não está declarado como completamente validado em acessibilidade.</p>
-</div>
-</details>
-<details>
-<summary>Opções de câmera</summary>
-<div class="app-copy">
-<ul>
-<li>Uso das câmeras disponíveis no celular ou tablet.</li>
-<li>Alternância entre câmeras compatíveis.</li>
-<li>Prévia frontal alinhada à imagem analisada, sem o efeito de espelho. Esquerda e direita são orientadas pela perspectiva do observador olhando na direção da câmera.</li>
-<li>Botão identificado para focar no centro da imagem.</li>
-<li>Acesso a câmeras externas reconhecidas pelo Android, conforme a compatibilidade do aparelho e do acessório.</li>
-<li>Câmera ESP por Bluetooth com firmware R11. A ESP envia uma foto por solicitação manual ou automática do celular. A leitura de texto e a descrição de cenas são feitas no celular.</li>
-<li>Escolha entre a câmera ESP32 por Bluetooth e a câmera do celular. As opções de USB e Wi-Fi foram retiradas da interface do MVP.</li>
-</ul>
-</div>
-</details>
-<details>
-<summary>Preferências da IA</summary>
-<div class="app-copy">
-<p>Conte o que é mais importante para você, o que precisa que a IA priorize e como gostaria de receber as descrições.</p>
-<p>A personalização é opcional. No aplicativo, abra <strong>Ajustes e outras câmeras → Preferências da IA</strong> para escolher o nível e informar suas prioridades em texto livre: o que identificar primeiro, quais informações são essenciais, quais detalhes receber com menos frequência e como a IA deve se comunicar.</p>
-<p>As escolhas ficam salvas no aparelho e são aplicadas às próximas descrições e perguntas, inclusive no modo automático. Você pode editar ou apagar o texto quando quiser. Por exemplo, ao priorizar obstáculos com o nível Rápida, a IA recebe a orientação de destacá-los de forma breve. A personalização não deve inventar informações nem omitir alertas críticos de segurança.</p>
-<p>As preferências são enviadas ao serviço de IA junto com cada pedido online. A leitura de textos e cores sem internet mantém seu funcionamento.</p>
-</div>
-</details>
-<details>
-<summary>Configuração da inteligência artificial</summary>
-<div class="app-copy">
-<p>O aplicativo oferece uma área para configurar e testar o serviço de IA. Na edição pública, as descrições de cenas e respostas sobre imagens exigem internet e uma chave pessoal de acesso ao serviço.</p><p>Texto e cores continuam disponíveis no modo sem internet.</p>
-<p><strong>Uso da IA:</strong> veja chamadas e tokens informados pelo serviço, incluindo tentativas e cancelamentos, no painel de consumo. A contagem é registrada neste aparelho a partir da versão 1.1.0. Dados ausentes são sinalizados como consumo incompleto. A meta diária é pessoal; os limites informados pelo serviço não representam saldo da conta nem custo em reais.</p>
-</div>
-</details>
-<details open>
-<summary>Novidades da versão 1.2.19</summary>
-<div class="app-copy"><ul>
-<li>Modo claro com fundo claro em toda a interface, cartões brancos e textos em azul-marinho.</li>
-<li>Ícones, prévia da câmera e navegação ajustados à nova paleta.</li>
-</ul><p><a href="https://github.com/Vermais/ver-mais-site/releases/tag/v1.2.19">Leia as notas da versão 1.2.19.</a></p></div>
-</details>
-<details>
-<summary>Novidades da versão 1.2.18</summary>
-<div class="app-copy"><ul>
-<li>O cartão “À sua frente” aparece nas câmeras do celular e do ESP32, com as ações Ouvir e Perguntar.</li>
-<li>A velocidade da voz fica na rolagem e os controles adicionais ficam em Ajustes da câmera.</li>
-<li>A tela de conexão do ESP32 tem um atalho para usar a câmera do celular.</li>
-</ul><p><a href="https://github.com/Vermais/ver-mais-site/releases/tag/v1.2.18">Leia as notas da versão 1.2.18.</a></p></div>
-</details>
-<details>
-<summary>Novidades da versão 1.2.16</summary>
-<div class="app-copy"><ul>
-<li>Corrige a orientação e o espelhamento das fotos da câmera ESP Bluetooth.</li>
-<li>Melhora a descrição do ambiente e dos objetos visíveis.</li>
-<li>Faz uma segunda captura com flash somente quando a primeira foto indica baixa luminosidade. O flash automático requer firmware R11.2.</li>
-</ul><p><a href="https://github.com/Vermais/ver-mais-site/releases/tag/v1.2.16">Leia as notas da versão 1.2.16.</a></p></div>
-</details>
-<details>
-<summary>Novidades da versão 1.2.15</summary>
-<div class="app-copy"><ul>
-<li>Novo fundo vetorial e ações principais destacadas nos dois visuais.</li>
-<li>Indicador compacto de uso da IA com atalho nas câmeras.</li>
-<li>Tela de consumo reorganizada, com acesso direto à meta diária.</li>
-</ul><p><a href="https://github.com/Vermais/ver-mais-site/releases/tag/v1.2.15">Leia as notas da versão 1.2.15.</a></p></div>
-</details>
-<details>
-<summary>Novidades da versão 1.2.14</summary>
-<div class="app-copy"><ul>
-<li>Fundo vetorial de ponta a ponta e transições suaves nos dois visuais.</li>
-<li>Barra de uso da IA nas telas da câmera.</li>
-<li>Controles de descrição automática e velocidade de voz padronizados.</li>
-</ul><p><a href="https://github.com/Vermais/ver-mais-site/releases/tag/v1.2.14">Leia as notas da versão 1.2.14.</a></p></div>
-</details>
-<details>
-<summary>Novidades da versão 1.2.13</summary>
-<div class="app-copy"><ul>
-<li>Dois visuais do Figma: Escuro como padrão e Cartões claros. Alterne em <strong>Ajustes → Aparência</strong>.</li>
-<li>Listras da identidade Ver+, logo na tela inicial e mini olho junto ao botão Voltar.</li>
-<li>Botões com espaçamento consistente e cores revisadas nos controles de IA, voz e escuta.</li>
-<li>Descrição por IA nas câmeras e Guia sobreposto à tela atual.</li>
-</ul><p><a href="https://github.com/Vermais/ver-mais-site/releases/tag/v1.2.13">Leia as notas da versão 1.2.13.</a></p></div>
-</details>
-<details>
-<summary>Novidades da versão 1.2.12</summary>
-<div class="app-copy">
-<ul>
-<li>Telas de câmera com menos botões e descrição junto à captura.</li>
-<li>Esforço e detalhamento reunidos em Descrição por IA.</li>
-<li>Voz e Guia reorganizados. Serviços de IA, consumo e câmeras alternativas ficam em Opções avançadas.</li>
-</ul>
-<p><a href="https://github.com/Vermais/ver-mais-site/releases/tag/v1.2.12">Leia as notas da versão 1.2.12.</a></p>
-</div>
-</details>
-<details>
-<summary>Novidades da versão 1.2.11</summary>
-<div class="app-copy">
-<ul>
-<li>Logo original em destaque na tela inicial e listras curvas que chegam às bordas.</li>
-<li>A descrição aparece na própria tela da câmera do celular ou da ESP32. Você pode ouvir de novo, perguntar por voz ou fazer outra captura.</li>
-</ul>
-<p><a href="https://github.com/Vermais/ver-mais-site/releases/tag/v1.2.11">Leia as notas da versão 1.2.11.</a></p>
-</div>
-</details>
-<details>
-<summary>Novidades da versão 1.2.7 — Novas telas</summary>
-<div class="app-copy">
-<ul>
-<li>Tela inicial redesenhada com a câmera ESP32 em destaque.</li>
-<li>Novas telas para captura, processamento e resultado na ESP32 e no celular.</li>
-<li>Nova tela de escuta do Ei, Guia e testes de conexão em Configurações → Serviços de IA.</li>
-</ul>
-<p><a href="https://github.com/Vermais/ver-mais-site/releases/tag/v1.2.7">Leia as notas da versão 1.2.7.</a></p>
-</div>
-</details>
-<details>
-<summary>Novidades da versão 1.2.6 — Câmera ESP e Guia</summary>
-<div class="app-copy">
-<ul>
-<li>A câmera ESP por Bluetooth fica em destaque na tela inicial. A opção por Wi-Fi fica em <strong>Outras câmeras</strong>.</li>
-<li>A velocidade da narração pode ser ajustada em <strong>Ajustes da câmera</strong>, na própria tela da câmera.</li>
-<li>O Guia aceita mais formas de pedir uma ação. Experimente “Pode abrir a câmera?”, “Repete o que você acabou de falar” ou “Pode falar mais devagar?”.</li>
-</ul>
-<p><a href="https://github.com/Vermais/ver-mais-site/releases/tag/v1.2.6">Leia as notas da versão 1.2.6.</a></p>
-</div>
-</details>
-<details>
-<summary>Novidades da versão 1.2.2 — Controles por voz</summary>
-<div class="app-copy">
-<ul>
-<li>Peça <strong>“Ouvir de novo”</strong>, <strong>“Esforço alto”</strong> ou <strong>“Descrição rápida”</strong>. Para acionar um botão, diga <strong>“Pressione”</strong> seguido do nome do controle, como <strong>“Diagnosticar câmera”</strong> ou <strong>“Salvar preferências”</strong>.</li>
-<li>Para fazer uma pergunta, diga <strong>“Ei, Guia”</strong>, espere a confirmação e diga <strong>“quero perguntar sobre a imagem”</strong>. Quando ouvir “O que você quer saber sobre a imagem?”, fale sua pergunta.</li>
-<li>Na câmera, peça para descrever a imagem, repetir a resposta, parar a voz ou voltar à tela anterior.</li>
-<li>Toque em <strong>Ativar Ei, Guia</strong> uma vez e permita o microfone. Aguarde a indicação <strong>“Aguardando: Ei, Guia”</strong> antes da primeira chamada.</li>
-<li>O botão <strong>Falar</strong> também inicia os mesmos comandos. O serviço de voz do Android pode exigir internet e enviar o áudio ao provedor, conforme o aviso no aplicativo.</li>
-<li>Depois de cada pedido, o Guia volta a aguardar a chamada. A escuta para ao sair do app, apagar a tela ou desativar o Guia.</li>
-<li>O fluxo de interrupção e os comandos foram avaliados em testes automatizados. O reconhecimento de fala com o alto-falante ligado ainda precisa ser testado em um Android físico.</li>
-</ul>
-<p><a href="https://github.com/Vermais/ver-mais-site/releases/tag/v1.2.2">Leia as notas e baixe a versão 1.2.2 com o Guia.</a></p>
-</div>
-</details>
-<details>
-<summary>Novidades da versão 1.1.2 — em teste</summary>
-<div class="app-copy">
-<ul>
-<li>A tela indica o pedido de foto, a porcentagem recebida por Bluetooth e o início da análise.</li>
-<li>Mensagens específicas ajudam a identificar se a ESP deixou de responder ou se a transferência da foto foi interrompida.</li>
-<li>A captura manual e automática continua disponível com a câmera ESP Bluetooth R11.</li>
-<li>APK de 33,9 MB com a mesma assinatura da versão 1.1.1.</li>
-<li>O APK foi compilado e os 14 testes locais de montagem do JPEG passaram. A captura com a placa física ainda precisa de validação.</li>
-</ul>
-<p><a href="https://github.com/Vermais/ver-mais-site/releases/tag/v1.1.2">Leia as notas e baixe a versão 1.1.2.</a></p>
-</div>
-</details>
-<details>
-<summary>Requisitos e limitações</summary>
-<div class="app-copy">
-<p>Disponível para Android 9 ou superior. Câmera necessária para captura; microfone utilizado nas perguntas por voz; Bluetooth utilizado na conexão com o protótipo Ver+.</p><p>O Ver+ está em fase de MVP. As respostas da IA, a leitura de textos e a estimativa de cores podem conter erros. O aplicativo oferece apoio informativo e não deve ser usado para decidir se é seguro atravessar uma rua ou realizar outras ações que dependam de avaliação de risco.</p>
-</div>
-</details>
-<p class="app-tagline">Ver+ — Tecnologia para enxergar possibilidades.</p>
-</article>
 </section>
 <section id="equipe" class="section team">
 <div class="wrap">
 <header class="heading reveal">
-<p class="kicker">Pessoas que enxergam possibilidades</p>
+<p class="kicker">Projeto escolar em Pereiro, Ceará</p>
 <h2>Equipe da MOCICULT 2026</h2>
 <p>Estudantes e educadores da EEEP Professora Maria Célia Pinheiro Falcão unidos por tecnologia e impacto social.</p>
 </header>
@@ -591,7 +304,7 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 <div class="wrap">
 <header class="heading reveal">
 <p class="kicker">Caderno de campo</p>
-<h2 id="galleryHeading">O projeto acontecendo.</h2>
+<h2 id="galleryHeading">Registros do desenvolvimento</h2>
 <p>Navegue pelos registros reais do desenvolvimento do Ver+, das reuniões aos testes e à documentação.</p>
 </header>
 <div class="field-gallery reveal" role="region" aria-roledescription="carrossel" aria-label="Registros do caderno de campo" aria-describedby="fieldHelp">
@@ -625,8 +338,8 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 <div class="wrap contact-card">
 <div>
 <p class="kicker">Acompanhe o Ver+</p>
-<h2>Veja o projeto ganhando o mundo.</h2>
-<p class="contact-lead">Bastidores, testes, novidades e cada novo passo da nossa tecnologia assistiva.</p>
+<h2>Novidades e contato</h2>
+<p class="contact-lead">Acompanhe os testes e as atualizações do protótipo.</p>
 </div>
 <div class="social-call">
 <span>Nosso canal principal</span>
@@ -646,11 +359,10 @@ html[data-theme=dark] .app-description .app-badges span{background:#243a31;borde
 <b aria-hidden="true">Ver<span>+</span>
 </b>
 </a>
-<p>Tecnologia para inclusão e autonomia.<br>
+<p>Tecnologia assistiva para acesso à informação.<br>
 <strong>Feito por Gustavo Feitosa</strong>
 </p>
-<p>© <span id="year">
-</span> Ver+ • Pereiro, CE</p>
+<p>© <span id="year">2026</span> Ver+ • Pereiro, CE</p>
 </div>
 </footer>
 <style id="analytics-privacy-styles">
